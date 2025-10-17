@@ -3,1187 +3,482 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumit Agnihotri | Data Scientist & AI/ML Engineer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="description" content="Sumit Agnihotri - Data Scientist | AI Engineer | Data Warrior. Expert in Machine Learning, Deep Learning, Computer Vision, and LLMs. Building intelligence into legacy.">
+    <meta name="keywords" content="Sumit Agnihotri, Data Science, AI Engineer, Machine Learning, Deep Learning, Computer Vision, LLMs, RAG, Python, Data Analyst, Portfolio">
+    <meta name="author" content="Sumit Agnihotri">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Sumit Agnihotri | Data Scientist & AI Engineer">
+    <meta property="og:description" content="Data Warrior crafting intelligence through discipline and code. Specializing in ML, AI, and Data Analytics.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/Sumit-Agnihotri">
+    <title>Sumit Agnihotri | Data Scientist & AI Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #6a11cb;
-            --secondary: #2575fc;
-            --accent: #ff6b6b;
-            --dark: #0a0a1a;
-            --darker: #050510;
-            --light: #e0e0ff;
-            --lighter: #f0f0ff;
-            --glass: rgba(30, 30, 50, 0.6);
-            --glow: 0 0 15px rgba(106, 17, 203, 0.3);
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: radial-gradient(circle at top right, var(--darker), var(--dark));
-            color: var(--light);
-            padding-top: 80px;
-            overflow-x: hidden;
-        }
-        
-        /* Particles background */
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            top: 0;
-        }
-        
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            background: rgba(10,10,20,0.95) !important;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 2px 16px rgba(0,0,0,0.2);
-            height: 80px;
-            transition: all 0.4s ease;
-        }
-        
-        .navbar.scrolled {
-            height: 70px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        }
-        
-        .navbar-brand {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        
-        .navbar-brand .brand-logo {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: var(--light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 8px;
-            box-shadow: var(--glow);
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-brand:hover .brand-logo {
-            transform: rotate(15deg);
-        }
-        
-        .navbar-brand .brand-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 0.5px;
-        }
-        
-        .navbar-nav .nav-link {
-            font-size: 1.1rem;
-            font-weight: 500;
-            position: relative;
-            padding: 8px 15px;
-            margin: 0 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-        
-        .navbar-nav .nav-link:hover::after,
-        .navbar-nav .nav-link.active::after {
-            width: 70%;
-        }
-        
-        .navbar-icons a {
-            color: var(--light);
-            font-size: 1.3rem;
-            transition: all 0.2s ease;
-            margin-left: 15px;
-        }
-        
-        .navbar-icons a:hover {
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        /* Section Styling */
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 2px;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Hero Section */
-        #home {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero-content h2 {
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 2rem;
-        }
-        
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 2.5rem;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border: none;
-            padding: 12px 30px;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: all 0.5s ease;
-        }
-        
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-        
-        .btn-outline-light {
-            border: 2px solid var(--light);
-            color: var(--light);
-            padding: 10px 28px;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-outline-light:hover {
-            background: var(--light);
-            color: var(--dark);
-        }
-        
-        .hero-illustration {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
-        }
-        
-        /* Cards */
-        .card-custom {
-            background: var(--glass);
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            transition: all 0.4s ease;
-            overflow: hidden;
-        }
-        
-        .card-custom::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(106,17,203,0.2) 0%, transparent 70%);
-            transform: rotate(30deg);
-            opacity: 0;
-            transition: all 0.6s ease;
-        }
-        
-        .card-custom:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-        
-        .card-custom:hover::before {
-            opacity: 1;
-        }
-        
-        .card-custom h3 {
-            position: relative;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .card-custom h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 2px;
-        }
-        
-        /* Skill Bars */
-        .skill-bar {
-            margin-bottom: 25px;
-        }
-        
-        .skill-bar-label {
-            font-weight: 500;
-            margin-bottom: 8px;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .progress {
-            height: 12px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            overflow: visible;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
-        }
-        
-        .progress-bar {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 10px;
-            position: relative;
-            overflow: visible;
-            transition: width 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-        
-        .progress-bar::after {
-            content: '';
-            position: absolute;
-            top: -5px;
-            right: 0;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: var(--light);
-            box-shadow: 0 0 10px var(--primary);
-            transform: translateX(50%);
-        }
-        
-        /* Projects */
-        .project-card {
-            background: var(--glass);
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            transition: all 0.4s ease;
-            overflow: hidden;
-            height: 100%;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-        
-        .project-img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-            transition: all 0.5s ease;
-        }
-        
-        .project-card:hover .project-img {
-            transform: scale(1.05);
-        }
-        
-        .badge {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #fff;
-            font-size: 0.9rem;
-            margin-right: 6px;
-            margin-bottom: 8px;
-            border-radius: 50px;
-            padding: 5px 12px;
-            font-weight: 500;
-        }
-        
-        /* Timeline */
-        .timeline {
-            position: relative;
-            margin: 0 auto;
-            padding: 3rem 0;
-            max-width: 800px;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0; bottom: 0;
-            width: 6px;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
-            transform: translateX(-50%);
-            border-radius: 3px;
-        }
-        
-        .timeline-item {
-            position: relative;
-            width: 50%;
-            padding: 1.5rem 2.5rem;
-            box-sizing: border-box;
-            margin-bottom: 40px;
-        }
-        
-        .timeline-item.left {
-            left: 0;
-            text-align: right;
-            padding-right: 60px;
-        }
-        
-        .timeline-item.right {
-            left: 50%;
-            text-align: left;
-            padding-left: 60px;
-        }
-        
-        .timeline-item .timeline-content {
-            background: var(--glass);
-            border-radius: 20px;
-            padding: 25px;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .timeline-item .timeline-dot {
-            position: absolute;
-            top: 2rem;
-            width: 24px; height: 24px;
-            background: var(--accent);
-            border-radius: 50%;
-            left: calc(100% - 12px);
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0 0 8px rgba(255,107,107,0.2);
-        }
-        
-        .timeline-item .timeline-dot i {
-            color: #fff;
-            font-size: 12px;
-        }
-        
-        .timeline-item.right .timeline-dot {
-            left: -12px;
-        }
-        
-        .timeline-item h5 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: var(--accent);
-        }
-        
-        /* Creative Section */
-        .fun-fact-box {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: #fff;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(106,17,203,0.3);
-            font-size: 1.15rem;
-            display: flex;
-            align-items: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-        }
-        
-        .fun-fact-box::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
-            transform: rotate(30deg);
-            opacity: 0;
-            transition: all 0.6s ease;
-        }
-        
-        .fun-fact-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(106,17,203,0.4);
-        }
-        
-        .fun-fact-box:hover::before {
-            opacity: 1;
-        }
-        
-        .fun-fact-icon {
-            font-size: 2.5rem;
-            margin-right: 20px;
-            flex-shrink: 0;
-        }
-        
-        /* Contact Section */
-        .contact-form input,
-        .contact-form textarea {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: var(--light);
-            border-radius: 12px;
-            padding: 12px 18px;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            background: rgba(255,255,255,0.12);
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(106,17,203,0.2);
-            outline: none;
-        }
-        
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--glass);
-            color: var(--light);
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-            margin-right: 15px;
-        }
-        
-        .social-icon:hover {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            transform: translateY(-5px);
-            color: #fff;
-            box-shadow: var(--glow);
-        }
-        
-        /* Footer */
-        footer {
-            background: rgba(5,5,10,0.8);
-            backdrop-filter: blur(10px);
-            padding: 30px 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-        
-        /* Animations */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .navbar {
-                height: 70px;
-            }
-            
-            .navbar-brand .brand-name {
-                font-size: 1.3rem;
-            }
-            
-            .hero-content h1 {
-                font-size: 2.3rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-            
-            .timeline::before {
-                left: 30px;
-            }
-            
-            .timeline-item,
-            .timeline-item.left,
-            .timeline-item.right {
-                width: 100%;
-                left: 0;
-                text-align: left;
-                padding-left: 70px;
-                padding-right: 20px;
-            }
-            
-            .timeline-item .timeline-dot,
-            .timeline-item.right .timeline-dot {
-                left: 18px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <!-- W3CSS for enhanced responsiveness -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
-    
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">
-                <span class="brand-logo">
-                    <i class="fas fa-brain"></i>
-                </span>
-                <span class="brand-name">Sumit Agnihotri</span>
-            </a>
-            <div class="navbar-icons">
-                <a href="https://github.com/Sumit-Agnihotri" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/sumit-agnihotri/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <!-- ===================== -->
+        <!-- Cinematic Portfolio: Sumit Agnihotri -->
+        <!-- ===================== -->
+
+        <!-- Animated Background -->
+        <div class="animated-bg"></div>
+        <div class="data-flow" id="dataFlow"></div>
+
+        <!-- ========== NAVIGATION ========== -->
+        <header>
+            <nav aria-label="Main Navigation" class="w3-bar w3-padding-small">
+                <div class="container w3-container">
+                    <div class="logo w3-bar-item">⚔️ SUMIT AGNIHOTRI</div>
+                    <button class="menu-toggle w3-bar-item w3-right" onclick="toggleMenu()">
+                        <span></span><span></span><span></span>
+                    </button>
+                    <ul class="nav-links w3-bar w3-hide-small w3-right" id="navLinks">
+                        <li class="w3-bar-item"><a href="#hero" onclick="closeMenu()">Home</a></li>
+                        <li class="w3-bar-item"><a href="#about" onclick="closeMenu()">About</a></li>
+                        <li class="w3-bar-item"><a href="#skills" onclick="closeMenu()">Skills</a></li>
+                        <li class="w3-bar-item"><a href="#projects" onclick="closeMenu()">Projects</a></li>
+                        <li class="w3-bar-item"><a href="#journey" onclick="closeMenu()">Journey</a></li>
+                        <li class="w3-bar-item"><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ========== HERO SECTION ========== -->
+        <main id="main-content" tabindex="-1">
+                    <!-- ========== HERO SECTION ========== -->
+                    <section class="hero" id="hero" aria-label="Hero">
+                        <div class="parallax-bg" aria-hidden="true"></div>
+                        <div class="container">
+                            <div class="hero-content">
+                                <h1>Sumit Agnihotri</h1>
+                                <h2>Data Science Student & AI Engineer in Making</h2>
+                                <p>Disciplined. Fearless. Purpose-driven. <br> <span style="color:var(--highlight)">Kratos Mindset</span> in the world of Data & AI.</p>
+                                <div class="hero-btns">
+                                    <a href="#projects" class="btn-primary">View Projects</a>
+                                    <a href="#contact" class="btn-secondary">Contact Me</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SVG Divider -->
+                        <div class="svg-divider-bottom" aria-hidden="true">
+                            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#0a0e27" fill-opacity="1" d="M0,0 C480,120 960,0 1440,120 L1440,120 L0,120 Z"></path>
+                            </svg>
+                        </div>
+                    </section>
+
+                    <!-- ========== ABOUT SECTION ========== -->
+                    <section class="about" id="about" aria-label="About">
+                        <!-- SVG Divider Top -->
+                        <div class="svg-divider-top" aria-hidden="true">
+                            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#0a0e27" fill-opacity="1" d="M0,120 C480,0 960,120 1440,0 L1440,0 L0,0 Z"></path>
+                            </svg>
+                        </div>
+                        <div class="container">
+                            <div class="section-title">
+                                <h2>🧑‍💻 ABOUT ME</h2>
+                                <p>Who is Sumit Agnihotri?</p>
+                            </div>
+                            <div class="about-content">
+                                <div class="about-img">
+                                    <img src="https://avatars.githubusercontent.com/u/104985747?v=4" alt="Sumit Agnihotri portrait" loading="lazy">
+                                </div>
+                                <div class="about-text">
+                                    <p>Hello! I’m <strong>Sumit Agnihotri</strong>, a Data Science student and aspiring AI Engineer. I believe in the power of discipline, relentless learning, and the courage to challenge the status quo. My journey is driven by a passion for transforming data into actionable intelligence and building solutions that matter.</p>
+                                    <p>With a <span style="color:var(--highlight)">Kratos mindset</span>, I approach every challenge as a battle to be won — with logic, skill, and unwavering focus. My arsenal includes Python, Machine Learning, Data Analysis, and a growing expertise in AI and LLMs. I’m on a mission to turn chaos into clarity and intelligence into legacy.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========== SKILLS SECTION ========== -->
+                    <section class="skills" id="skills" aria-label="Skills">
+                        <!-- SVG Divider Top -->
+                        <div class="svg-divider-top" aria-hidden="true">
+                            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#16213e" fill-opacity="1" d="M0,120 C480,0 960,120 1440,0 L1440,0 L0,0 Z"></path>
+                            </svg>
+                        </div>
+                        <div class="container">
+                            <div class="section-title">
+                                <h2>⚙️ ARSENAL OF SKILLS</h2>
+                                <p>Weapons Forged Through Practice & Precision</p>
+                            </div>
+                            <div class="skills-grid">
+                                <!-- Programming Languages -->
+                                <div class="skill-card">
+                                    <h3><i class="fas fa-code"></i> Languages</h3>
+                                    <div class="skill-tags">
+                                        <span class="tag">Python</span>
+                                        <span class="tag">SQL</span>
+                                        <span class="tag">JavaScript</span>
+                                    </div>
+                                </div>
+                                <!-- Machine Learning -->
+                                <div class="skill-card">
+                                    <h3><i class="fas fa-brain"></i> Machine Learning</h3>
+                                    <div class="skill-tags">
+                                        <span class="tag">Scikit-Learn</span>
+                                        <span class="tag">TensorFlow</span>
+                                        <span class="tag">PyTorch</span>
+                                        <span class="tag">Keras</span>
+                                    </div>
+                                </div>
+                                <!-- Computer Vision -->
+                                <div class="skill-card">
+                                    <h3><i class="fas fa-eye"></i> Computer Vision</h3>
+                                    <div class="skill-tags">
+                                        <span class="tag">OpenCV</span>
+                                        <span class="tag">CNN</span>
+                                        <span class="tag">Image Processing</span>
+                                    </div>
+                                </div>
+                                <!-- Data Analysis -->
+                                <div class="skill-card">
+                                    <h3><i class="fas fa-chart-line"></i> Data Analysis</h3>
+                                    <div class="skill-tags">
+                                        <span class="tag">Pandas</span>
+                                        <span class="tag">NumPy</span>
+                                        <span class="tag">Matplotlib</span>
+                                        <span class="tag">Seaborn</span>
+                                    </div>
+                                </div>
+                                <!-- AI & LLMs -->
+                                <div class="skill-card">
+                                    <h3><i class="fas fa-robot"></i> AI & LLMs</h3>
+                                    <div class="skill-tags">
+                                        <span class="tag">Large Language Models</span>
+                                        <span class="tag">RAG</span>
+                                        <span class="tag">NLP</span>
+                                    </div>
+                                </div>
+                                <!-- Visualization -->
+                                <div class="skill-card">
+                                    <h3><i class="fas fa-chart-bar"></i> Visualization</h3>
+                                    <div class="skill-tags">
+                                        <span class="tag">Power BI</span>
+                                        <span class="tag">Excel</span>
+                                        <span class="tag">Tableau</span>
+                                    </div>
+                                </div>
+                                <!-- Databases -->
+                                <div class="skill-card">
+                                    <h3><i class="fas fa-database"></i> Databases</h3>
+                                    <div class="skill-tags">
+                                        <span class="tag">SQL</span>
+                                        <span class="tag">MongoDB</span>
+                                        <span class="tag">PostgreSQL</span>
+                                    </div>
+                                </div>
+                                <!-- Tools & Platforms -->
+                                <div class="skill-card">
+                                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                                    <div class="skill-tags">
+                                        <span class="tag">Git</span>
+                                        <span class="tag">GitHub</span>
+                                        <span class="tag">VSCode</span>
+                                        <span class="tag">Jupyter</span>
+                                        <span class="tag">Anaconda</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========== PROJECTS SECTION ========== -->
+                    <section class="projects" id="projects" aria-label="Projects">
+                        <!-- SVG Divider Top -->
+                        <div class="svg-divider-top" aria-hidden="true">
+                            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#0a0e27" fill-opacity="1" d="M0,120 C480,0 960,120 1440,0 L1440,0 L0,0 Z"></path>
+                            </svg>
+                        </div>
+                        <div class="container">
+                            <div class="section-title">
+                                <h2>� PROJECTS</h2>
+                                <p>Battlefields Where Skills Were Tested</p>
+                            </div>
+                            <div class="projects-grid">
+                                <!-- Project 1 -->
+                                <div class="project-card">
+                                    <div class="project-content">
+                                        <h3>⚔️ Military Expenditure Analysis</h3>
+                                        <p>A comprehensive global analysis of defense spending patterns using advanced Data Science techniques. Uncovered insights into military budgets, trends, and strategic allocations across nations.</p>
+                                        <div class="project-tech">
+                                            <span>Python</span>
+                                            <span>Pandas</span>
+                                            <span>Matplotlib</span>
+                                            <span>Data Analysis</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="https://github.com/Sumit-Agnihotri" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Project 2 -->
+                                <div class="project-card">
+                                    <div class="project-content">
+                                        <h3>📊 Customer Churn Prediction</h3>
+                                        <p>Built a Machine Learning model to predict customer retention and identify at-risk customers. Utilized classification algorithms to help businesses reduce churn and increase loyalty.</p>
+                                        <div class="project-tech">
+                                            <span>Python</span>
+                                            <span>Scikit-Learn</span>
+                                            <span>ML Algorithms</span>
+                                            <span>Data Preprocessing</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="https://github.com/Sumit-Agnihotri" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Project 3 -->
+                                <div class="project-card">
+                                    <div class="project-content">
+                                        <h3>🍽️ Zomato Data Analysis</h3>
+                                        <p>Analyzed restaurant trends, customer preferences, and ratings using Zomato's dataset. Created interactive visualizations and dashboards to reveal insights about the food industry.</p>
+                                        <div class="project-tech">
+                                            <span>Python</span>
+                                            <span>Pandas</span>
+                                            <span>Power BI</span>
+                                            <span>Data Visualization</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="https://github.com/Sumit-Agnihotri" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Project 4 -->
+                                <div class="project-card">
+                                    <div class="project-content">
+                                        <h3>🤖 AI Chatbot using LLMs & RAG</h3>
+                                        <p>Developed an intelligent chatbot leveraging Large Language Models and Retrieval-Augmented Generation for contextual and accurate responses. Experimental project pushing the boundaries of conversational AI.</p>
+                                        <div class="project-tech">
+                                            <span>Python</span>
+                                            <span>LLMs</span>
+                                            <span>RAG</span>
+                                            <span>NLP</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="https://github.com/Sumit-Agnihotri" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Project 5 -->
+                                <div class="project-card">
+                                    <div class="project-content">
+                                        <h3>👁️ Image Recognition using CNN</h3>
+                                        <p>Built and trained Convolutional Neural Networks for object classification and image recognition tasks. Achieved high accuracy in detecting and classifying various objects from images.</p>
+                                        <div class="project-tech">
+                                            <span>Python</span>
+                                            <span>TensorFlow</span>
+                                            <span>OpenCV</span>
+                                            <span>Deep Learning</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="https://github.com/Sumit-Agnihotri" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Project 6 -->
+                                <div class="project-card">
+                                    <div class="project-content">
+                                        <h3>📈 Sales Forecasting Dashboard</h3>
+                                        <p>Created an interactive Power BI dashboard for sales trend analysis and future predictions. Empowered business decisions through data-driven insights and visualizations.</p>
+                                        <div class="project-tech">
+                                            <span>Power BI</span>
+                                            <span>Excel</span>
+                                            <span>Data Modeling</span>
+                                            <span>Forecasting</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="https://github.com/Sumit-Agnihotri" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Project 8 -->
+                                <div class="project-card">
+                                    <div class="project-content">
+                                        <h3>🧬 Sentiment Analysis System</h3>
+                                        <p>Built a Natural Language Processing system to analyze sentiment from text data. Classified emotions and opinions to extract meaningful insights from customer feedback.</p>
+                                        <div class="project-tech">
+                                            <span>Python</span>
+                                            <span>NLP</span>
+                                            <span>NLTK</span>
+                                            <span>Machine Learning</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="https://github.com/Sumit-Agnihotri" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========== JOURNEY SECTION ========== -->
+                    <section class="journey" id="journey" aria-label="Journey">
+                        <!-- SVG Divider Top -->
+                        <div class="svg-divider-top" aria-hidden="true">
+                            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#16213e" fill-opacity="1" d="M0,120 C480,0 960,120 1440,0 L1440,0 L0,0 Z"></path>
+                            </svg>
+                        </div>
+                        <div class="container">
+                            <div class="section-title">
+                                <h2>🛡️ JOURNEY</h2>
+                                <p>Growth, Curiosity, and Real Progress</p>
+                            </div>
+                            <div class="journey-content">
+                                <p>My journey in data science began with a simple curiosity: how can we use data to understand the world better? Early on, I faced challenges—complex concepts, new tools, and the need to constantly adapt. But each obstacle became an opportunity to learn and improve.</p>
+                                <p>Through hands-on projects, coursework, and collaboration, I discovered the value of patience, persistence, and asking the right questions. I learned that progress is not always linear, and real growth comes from embracing mistakes and learning from them.</p>
+                                <p>Today, I am focused on building practical skills in data analysis, machine learning, and AI. My motivation is to solve real problems, contribute to meaningful projects, and keep learning every day. I believe in steady improvement, honest effort, and helping others along the way.</p>
+                                <p style="margin-top: 2rem; font-size: 1.1rem; color: var(--primary-color); font-weight: 500;">This is just the beginning—and I’m excited for what’s next.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========== EDUCATION SECTION ========== -->
+                    <section class="education" id="education" aria-label="Education">
+                        <!-- SVG Divider Top -->
+                        <div class="svg-divider-top" aria-hidden="true">
+                            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#0a0e27" fill-opacity="1" d="M0,120 C480,0 960,120 1440,0 L1440,0 L0,0 Z"></path>
+                            </svg>
+                        </div>
+                        <div class="container">
+                            <div class="section-title">
+                                <h2>🎓 EDUCATION</h2>
+                                <p>Where the Warrior Was Forged</p>
+                            </div>
+                            <div class="education-card">
+                                <h3>🏛️ Amity University, Uttar Pradesh</h3>
+                                <h4>Bachelor of Computer Applications (Data Science)</h4>
+                                <p class="year">📅 2023 – Present</p>
+                                <p>Focused on <strong>Data Science, Machine Learning, Artificial Intelligence, and real-world applications</strong> of intelligent systems. Studying cutting-edge technologies including Deep Learning, Computer Vision, Natural Language Processing, and Large Language Models to solve complex problems and drive innovation.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========== CERTIFICATIONS SECTION ========== -->
+                    <section class="certifications" id="certifications" aria-label="Certifications">
+                        <div class="container">
+                            <div class="section-title">
+                                <h2>📜 CERTIFICATIONS</h2>
+                                <p>Verified Skills & Achievements</p>
+                            </div>
+                            <div class="certifications-grid">
+                                <div class="cert-card">
+                                    <h4>Google Data Analytics Professional Certificate</h4>
+                                    <p>Coursera, 2024</p>
+                                </div>
+                                <div class="cert-card">
+                                    <h4>IBM Machine Learning with Python</h4>
+                                    <p>Coursera, 2024</p>
+                                </div>
+                                <div class="cert-card">
+                                    <h4>Microsoft Azure AI Fundamentals</h4>
+                                    <p>Microsoft, 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========== HONOR SECTION ========== -->
+                    <section class="honor" id="honor" aria-label="Code of Honor">
+                        <!-- SVG Divider Top -->
+                        <div class="svg-divider-top" aria-hidden="true">
+                            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#16213e" fill-opacity="1" d="M0,120 C480,0 960,120 1440,0 L1440,0 L0,0 Z"></path>
+                            </svg>
+                        </div>
+                        <div class="container">
+                            <div class="section-title">
+                                <h2>⚔️ CODE OF HONOR</h2>
+                                <p>Principles That Guide Every Battle</p>
+                            </div>
+                            <div class="honor-grid">
+                                <!-- Honor Principles -->
+                                <div class="honor-item">
+                                    <h4>💪 Discipline</h4>
+                                    <p>Action without motivation. Consistency without conditions.</p>
+                                </div>
+                                <div class="honor-item">
+                                    <h4>🦁 Courage</h4>
+                                    <p>Act without fear. Face challenges head-on.</p>
+                                </div>
+                                <div class="honor-item">
+                                    <h4>🔄 Consistency</h4>
+                                    <p>Stay in motion. Progress over perfection.</p>
+                                </div>
+                                <div class="honor-item">
+                                    <h4>🎯 Truth</h4>
+                                    <p>Face reality as it is, not as you wish it to be.</p>
+                                </div>
+                                <div class="honor-item">
+                                    <h4>👑 Self-Respect</h4>
+                                    <p>Never bend your worth for approval or comfort.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ========== CONTACT SECTION ========== -->
+                    <section class="contact" id="contact" aria-label="Contact">
+                        <!-- SVG Divider Top -->
+                        <div class="svg-divider-top" aria-hidden="true">
+                            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#0a0e27" fill-opacity="1" d="M0,120 C480,0 960,120 1440,0 L1440,0 L0,0 Z"></path>
+                            </svg>
+                        </div>
+                        <div class="container">
+                            <div class="section-title">
+                                <h2>📬 CONTACT</h2>
+                                <p>Let’s Connect & Collaborate</p>
+                            </div>
+                            <div class="contact-content">
+                                <div class="contact-methods">
+                                    <!-- Email -->
+                                    <div class="contact-card">
+                                        <i class="fas fa-envelope"></i>
+                                        <h3>Email</h3>
+                                        <a href="mailto:sagnihotri9710@gmail.com">sagnihotri9710@gmail.com</a>
+                                    </div>
+                                    <!-- GitHub -->
+                                    <div class="contact-card">
+                                        <i class="fab fa-github"></i>
+                                        <h3>GitHub</h3>
+                                        <a href="https://github.com/Sumit-Agnihotri" target="_blank">@Sumit-Agnihotri</a>
+                                    </div>
+                                    <!-- LinkedIn -->
+                                    <div class="contact-card">
+                                        <i class="fab fa-linkedin"></i>
+                                        <h3>LinkedIn</h3>
+                                        <a href="https://linkedin.com/in/sumit-agnihotri" target="_blank">Sumit Agnihotri</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+        </main>
+
+        <!-- ========== FOOTER ========== -->
+        <footer class="footer" role="contentinfo">
+            <div class="container">
+                <p>&copy; 2025 Sumit Agnihotri. All rights reserved.</p>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#timeline">Journey</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#creative">Creative</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </footer>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-vh-100 d-flex align-items-center">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-duration="1000">
-                    <h1 class="display-4 fw-bold mb-4">
-                        Hi, I'm <span class="gradient-text">Sumit Agnihotri</span>
-                    </h1>
-                    <h2 class="h3 mb-4">
-                        <span class="position-highlight">Data Scientist</span> | 
-                        <span class="position-highlight">ML Engineer</span> | 
-                        <span class="position-highlight">AI Enthusiast</span>
-                    </h2>
-                    <p class="lead mb-4">Transforming data into actionable insights using analytics, machine learning, and AI. I build solutions that drive business impact and innovation.</p>
-                    <div class="d-flex gap-3 mb-4">
-                        <a href="#projects" class="btn btn-primary btn-lg px-4">View Projects</a>
-                        <a href="#contact" class="btn btn-outline-light btn-lg px-4">Contact Me</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center floating" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
-                    <!-- Creative Data Science SVG Illustration -->
-                    <svg class="hero-illustration" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#6a11cb;stop-opacity:0.3" />
-                                <stop offset="100%" style="stop-color:#2575fc;stop-opacity:0.3" />
-                            </linearGradient>
-                            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#6a11cb;stop-opacity:0.8" />
-                                <stop offset="100%" style="stop-color:#2575fc;stop-opacity:0.8" />
-                            </linearGradient>
-                        </defs>
-                        
-                        <ellipse cx="250" cy="200" rx="180" ry="120" fill="url(#grad1)" opacity="0.15"/>
-                        
-                        <g>
-                            <rect x="120" y="180" width="60" height="100" fill="url(#grad2)" rx="8"/>
-                            <rect x="200" y="120" width="60" height="160" fill="url(#grad2)" rx="8"/>
-                            <rect x="280" y="160" width="60" height="120" fill="url(#grad2)" rx="8"/>
-                            
-                            <circle cx="150" cy="100" r="12" fill="#4ecdc4"/>
-                            <circle cx="230" cy="80" r="12" fill="#4ecdc4"/>
-                            <circle cx="310" cy="110" r="12" fill="#4ecdc4"/>
-                            
-                            <polyline points="150,100 230,80 310,110" fill="none" stroke="#4ecdc4" stroke-width="3" opacity="0.7"/>
-                        </g>
-                        
-                        <g>
-                            <ellipse cx="250" cy="320" rx="60" ry="18" fill="#fff" opacity="0.15"/>
-                            <text x="250" y="330" text-anchor="middle" font-size="22" fill="#fff" opacity="0.9" font-family="Segoe UI" font-weight="600">AI & Data</text>
-                        </g>
-                        
-                        <g>
-                            <path d="M100,250 Q150,230 200,250 T300,250" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-dasharray="5,5" opacity="0.7"/>
-                        </g>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- ========== SCROLL TO TOP BUTTON ========== -->
+        <button id="scrollTop" class="scroll-top" aria-label="Scroll to top" tabindex="0" onclick="scrollToTop()">
+            <i class="fas fa-arrow-up"></i>
+        </button>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">About <span class="gradient-text">Me</span></h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4" data-aos="fade-right" data-aos-delay="200">
-                    <div class="card-custom p-4 h-100">
-                        <h3>Who I Am</h3>
-                        <p>Data Scientist with a passion for machine learning, analytics, and delivering business value. Skilled in Python, SQL, Power BI, and cloud deployment. Experienced in building predictive models and interactive dashboards.</p>
-                        <ul class="mt-4">
-                            <li class="mb-2"><i class="fas fa-graduation-cap me-2 gradient-text"></i> BCA in Data Science, University of Data, 2026</li>
-                            <li class="mb-2"><i class="fas fa-certificate me-2 gradient-text"></i> Google Data Analytics Professional Certificate</li>
-                            <li><i class="fas fa-chart-line me-2 gradient-text"></i> 2 years of experience in data-driven solutions</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4" data-aos="fade-left" data-aos-delay="300">
-                    <div class="card-custom p-4 h-100">
-                        <h3>Career Highlights</h3>
-                        <ul class="mt-4">
-                            <li class="mb-3">
-                                <i class="fas fa-rocket me-2 gradient-text"></i>
-                                <strong>Developed ML models</strong> with 95% accuracy for customer segmentation and churn prediction.
-                            </li>
-                            <li class="mb-3">
-                                <i class="fas fa-tachometer-alt me-2 gradient-text"></i>
-                                <strong>Created dashboards</strong> using Power BI and Tableau for real-time insights.
-                            </li>
-                            <li>
-                                <i class="fas fa-book me-2 gradient-text"></i>
-                                <strong>Made Projects</strong> like Iris Flower Classification, Customer Churn, and Job Market Analysis, etc.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section with Bars -->
-    <section id="skills" class="py-5">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Technical <span class="gradient-text">Skills</span></h2>
-            <div class="row">
-                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-                    <div class="card-custom p-4">
-                        <h3 class="mb-4">Skill Proficiency</h3>
-                        <div class="skill-bar">
-                            <div class="skill-bar-label">Python <span>95%</span></div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width:95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-label">ML/AI <span>90%</span></div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width:90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-label">Analytics <span>88%</span></div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width:88%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-label">Visualization <span>85%</span></div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width:85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-label">SQL <span>90%</span></div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width:90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-label">Maths <span>87%</span></div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width:87%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-label">DSA <span>80%</span></div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width:80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-bar-label">Communication <span>92%</span></div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width:92%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
-                    <div class="card-custom p-4 h-100">
-                        <h3 class="mb-4">Technologies & Expertise</h3>
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <ul class="list-unstyled">
-                                    <li class="mb-3"><i class="fas fa-code me-2 gradient-text"></i> <b>Programming:</b> Python, R, SQL, Java</li>
-                                    <li class="mb-3"><i class="fas fa-chart-bar me-2 gradient-text"></i> <b>Analytics:</b> Pandas, NumPy, Power BI, Tableau</li>
-                                    <li class="mb-3"><i class="fas fa-robot me-2 gradient-text"></i> <b>ML/AI:</b> scikit-learn, TensorFlow, PyTorch</li>
-                                    <li><i class="fas fa-brain me-2 gradient-text"></i> <b>Deep Learning:</b> NLP, Computer Vision</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul class="list-unstyled">
-                                    <li class="mb-3"><i class="fas fa-calculator me-2 gradient-text"></i> <b>Maths:</b> Statistics, Linear Algebra</li>
-                                    <li class="mb-3"><i class="fas fa-project-diagram me-2 gradient-text"></i> <b>Data Structures & Algorithms</b></li>
-                                    <li class="mb-3"><i class="fas fa-paint-brush me-2 gradient-text"></i> <b>Visualization:</b> Matplotlib, Seaborn</li>
-                                    <li><i class="fas fa-cloud me-2 gradient-text"></i> <b>Cloud:</b> AWS, Azure</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Featured <span class="gradient-text">Projects</span></h2>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                <!-- Project 1: Iris Flower -->
-                <div class="col" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-card h-100">
-                        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="project-img" alt="Iris Flower Classification">
-                        <div class="card-body p-4">
-                            <h5 class="card-title">Iris Flower Classification</h5>
-                            <p class="card-text">Multi-algorithm comparison for iris species classification with hyperparameter optimization.</p>
-                            <div class="mb-3">
-                                <span class="badge">Python</span>
-                                <span class="badge">Scikit-learn</span>
-                                <span class="badge">SVM</span>
-                                <span class="badge">Neural Networks</span>
-                            </div>
-                            <a href="https://github.com/Sumit-Agnihotri/IRIS_FLOWER_CLASSIFICATION" target="_blank" class="btn btn-primary btn-sm w-100">
-                                <i class="fas fa-external-link-alt me-2"></i>View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: Titanic -->
-                <div class="col" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-card h-100">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/RMS_Titanic_3.jpg" class="project-img" alt="Titanic Survival Prediction">
-                        <div class="card-body p-4">
-                            <h5 class="card-title">Titanic Survival Prediction</h5>
-                            <p class="card-text">Passenger survival analysis with feature engineering and logistic regression.</p>
-                            <div class="mb-3">
-                                <span class="badge">Python</span>
-                                <span class="badge">Pandas</span>
-                                <span class="badge">Logistic Regression</span>
-                                <span class="badge">EDA</span>
-                            </div>
-                            <a href="https://github.com/Sumit-Agnihotri/TITANIC_SURVIVAL_PREDICTION" target="_blank" class="btn btn-primary btn-sm w-100">
-                                <i class="fas fa-external-link-alt me-2"></i>View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Military -->
-                <div class="col" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-card h-100">
-                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="project-img" alt="Military Expenditure Analysis">
-                        <div class="card-body p-4">
-                            <h5 class="card-title">Military Expenditure Analysis</h5>
-                            <p class="card-text">Defense spending trends with geopolitical insights using Plotly and time series.</p>
-                            <div class="mb-3">
-                                <span class="badge">Python</span>
-                                <span class="badge">Plotly</span>
-                                <span class="badge">Time Series</span>
-                                <span class="badge">Geospatial</span>
-                            </div>
-                            <a href="https://github.com/Sumit-Agnihotri/MILITARY_EXPENDITURE_ANALYSIS" target="_blank" class="btn btn-primary btn-sm w-100">
-                                <i class="fas fa-external-link-alt me-2"></i>View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: Zomato -->
-                <div class="col" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-card h-100">
-                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1374&q=80" class="project-img" alt="Zomato Data Analysis">
-                        <div class="card-body p-4">
-                            <h5 class="card-title">Zomato Data Analysis</h5>
-                            <p class="card-text">Customer behavior & segmentation using Python and statistical tools.</p>
-                            <div class="mb-3">
-                                <span class="badge">Python</span>
-                                <span class="badge">Seaborn</span>
-                                <span class="badge">BI</span>
-                                <span class="badge">Segmentation</span>
-                            </div>
-                            <a href="https://github.com/Sumit-Agnihotri/ZOMATO-DATA-ANALYSIS" target="_blank" class="btn btn-primary btn-sm w-100">
-                                <i class="fas fa-external-link-alt me-2"></i>View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: Google Play Store -->
-                <div class="col" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-card h-100">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="project-img" alt="Google Play Store Analysis">
-                        <div class="card-body p-4">
-                            <h5 class="card-title">Google Play Store Analysis</h5>
-                            <p class="card-text">App trends, user behavior & monetization insights from the Android ecosystem.</p>
-                            <div class="mb-3">
-                                <span class="badge">Python</span>
-                                <span class="badge">Pandas</span>
-                                <span class="badge">EDA</span>
-                                <span class="badge">Market Analysis</span>
-                            </div>
-                            <a href="https://github.com/Sumit-Agnihotri/GOOGLE_PLAY_STORE_ANALYSIS" target="_blank" class="btn btn-primary btn-sm w-100">
-                                <i class="fas fa-external-link-alt me-2"></i>View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6: Movie Rating -->
-                <div class="col" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-card h-100">
-                        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="project-img" alt="Movie Rating Prediction">
-                        <div class="card-body p-4">
-                            <h5 class="card-title">Movie Rating Prediction</h5>
-                            <p class="card-text">ML pipeline to predict ratings using ensemble models and advanced features.</p>
-                            <div class="mb-3">
-                                <span class="badge">Python</span>
-                                <span class="badge">XGBoost</span>
-                                <span class="badge">Random Forest</span>
-                                <span class="badge">Ensemble</span>
-                            </div>
-                            <a href="https://github.com/Sumit-Agnihotri/MOVIE_RATING_PREDICTION" target="_blank" class="btn btn-primary btn-sm w-100">
-                                <i class="fas fa-external-link-alt me-2"></i>View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Creative Timeline Section -->
-    <section id="timeline" class="py-5">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">My <span class="gradient-text">Journey</span></h2>
-            <div class="timeline">
-                <div class="timeline-item left" data-aos="fade-right">
-                    <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="timeline-content">
-                        <h5>2026: BCA in Data Science</h5>
-                        <p>Will be graduated, Amity University Online. I am specialized in data science and analytics, machine learning and predictive analytics.</p>
-                    </div>
-                </div>
-                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="200">
-                    <div class="timeline-dot"><i class="fas fa-certificate"></i></div>
-                    <div class="timeline-content">
-                        <h5>2025: Google Data Analytics Certificate</h5>
-                        <p>Earned Google's professional certification in data analytics and visualization techniques.</p>
-                    </div>
-                </div>
-                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="400">
-                    <div class="timeline-dot"><i class="fas fa-briefcase"></i></div>
-                    <div class="timeline-content">
-                        <h5>2025: Data Science Intern at CodSoft</h5>
-                        <p>Built scalable ML models for customer analytics and recommendation systems.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Creative Section: Fun Fact & Data Quote -->
-    <section id="creative" class="py-5">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Creative <span class="gradient-text">Corner</span></h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="fun-fact-box">
-                        <span class="fun-fact-icon"><i class="fas fa-brain"></i></span>
-                        <div>
-                            <b>Fun Fact:</b> The world generates over <b>2.5 quintillion bytes</b> of data every day! <br>
-                            <span style="font-size:0.98em;opacity:0.8;">(That's enough to fill 10 million Blu-ray discs daily!)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="fun-fact-box" style="background: linear-gradient(135deg, #ff6b6b 0%, #2575fc 100%);">
-                        <span class="fun-fact-icon"><i class="fas fa-quote-left"></i></span>
-                        <div>
-                            <b>Quote:</b> <i>"Data is the new oil, but insight is the new currency."</i>
-                            <br>
-                            <span style="font-size:0.98em;opacity:0.8;">— Sumit Agnihotri</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Get In <span class="gradient-text">Touch</span></h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4" data-aos="fade-right" data-aos-delay="200">
-                    <form class="card-custom p-4 h-100 contact-form" id="contact-form">
-                        <h3 class="mb-4">Send me a message</h3>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Your Name</label>
-                            <input type="text" name="name" class="form-control" id="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" name="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" name="subject" class="form-control" id="subject">
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100 mt-2">Send Message</button>
-                    </form>
-                </div>
-                <div class="col-lg-6 mb-4" data-aos="fade-left" data-aos-delay="300">
-                    <div class="card-custom p-4 h-100">
-                        <h3 class="mb-4">Contact Information</h3>
-                        <div class="mb-4">
-                            <p><i class="fas fa-envelope me-2 gradient-text"></i> <b>Email:</b> <a href="mailto:sagnihotri9710@gmail.com" class="text-decoration-none">sagnihotri9710@gmail.com</a></p>
-                            <p><i class="fas fa-map-marker-alt me-2 gradient-text"></i> <b>Location:</b> Lucknow, India</p>
-                        </div>
-                        
-                        <h4 class="mt-4 mb-3">Follow Me</h4>
-                        <div class="d-flex">
-                            <a href="https://github.com/Sumit-Agnihotri" target="_blank" class="social-icon" title="GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/sumit-agnihotri/" target="_blank" class="social-icon" title="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://instagram.com/confident_ds" target="_blank" class="social-icon" title="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://twitter.com" target="_blank" class="social-icon" title="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-4 text-center">
-        <div class="container">
-            <p class="mb-1">© 2025 Sumit Agnihotri. All rights reserved.</p>
-            <p class="mb-0">Crafted with <i class="fas fa-heart text-danger"></i> and Data Science</p>
-        </div>
-    </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        // Initialize AOS (Animate On Scroll)
-        AOS.init({
-            duration: 1000,
-            once: true,
-            easing: 'ease-out-back',
-            delay: 100
-        });
-        
-        // Initialize Particles.js
-        particlesJS("particles-js", {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: "#6a11cb" },
-                shape: { type: "circle" },
-                opacity: { value: 0.3, random: true },
-                size: { value: 3, random: true },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#2575fc",
-                    opacity: 0.2,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 2,
-                    direction: "none",
-                    random: true,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "grab" },
-                    onclick: { enable: true, mode: "push" },
-                    resize: true
-                }
-            }
-        });
-        
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Contact form handler
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Show success message
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>Message Sent!';
-            submitBtn.disabled = true;
-            
-            // Reset after delay
-            setTimeout(() => {
-                this.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 3000);
-        });
-        
-        // Animate progress bars when scrolled into view
-        const progressBars = document.querySelectorAll('.progress-bar');
-        
-        function animateProgressBars() {
-            progressBars.forEach(bar => {
-                const rect = bar.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-                
-                if (isVisible && !bar.dataset.animated) {
-                    bar.dataset.animated = true;
-                    const width = bar.style.width;
-                    bar.style.width = '0%';
-                    
-                    setTimeout(() => {
-                        bar.style.width = width;
-                    }, 300);
-                }
-            });
-        }
-        
-        // Initial check
-        animateProgressBars();
-        
-        // Check on scroll
-        window.addEventListener('scroll', animateProgressBars);
-    </script>
-</body>
-</html>
+        <!-- ========== SCRIPTS ========== -->
+        <script src="main.js"></script>
