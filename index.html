@@ -34,10 +34,10 @@
             <nav aria-label="Main Navigation" class="w3-bar w3-padding-small">
                 <div class="container w3-container">
                     <div class="logo w3-bar-item">⚔️ SUMIT AGNIHOTRI</div>
-                    <button class="menu-toggle w3-bar-item w3-right" onclick="toggleMenu()">
+                    <button class="menu-toggle w3-bar-item w3-right" onclick="toggleMenu()" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation menu">
                         <span></span><span></span><span></span>
                     </button>
-                    <ul class="nav-links w3-bar w3-hide-small w3-right" id="navLinks">
+                    <ul class="nav-links w3-bar w3-hide-small w3-right" id="navLinks" role="menubar" aria-hidden="true">
                         <li class="w3-bar-item"><a href="#hero" onclick="closeMenu()">Home</a></li>
                         <li class="w3-bar-item"><a href="#about" onclick="closeMenu()">About</a></li>
                         <li class="w3-bar-item"><a href="#skills" onclick="closeMenu()">Skills</a></li>
@@ -88,7 +88,7 @@
                             </div>
                             <div class="about-content">
                                 <div class="about-img">
-                                    <img src="https://avatars.githubusercontent.com/u/104985747?v=4" alt="Sumit Agnihotri portrait" loading="lazy">
+                                    <img src="My Photo.jpg" alt="Sumit Agnihotri portrait" loading="lazy">
                                 </div>
                                 <div class="about-text">
                                     <p>Hello! I’m <strong>Sumit Agnihotri</strong>, a Data Science student and aspiring AI Engineer. I believe in the power of discipline, relentless learning, and the courage to challenge the status quo. My journey is driven by a passion for transforming data into actionable intelligence and building solutions that matter.</p>
@@ -202,119 +202,84 @@
                         </div>
                         <div class="container">
                             <div class="section-title">
-                                <h2>� PROJECTS</h2>
-                                <p>Battlefields Where Skills Were Tested</p>
+                                <h2>🚀 PROJECTS</h2>
+                                <p>Selected Data Science & Analytics Projects</p>
                             </div>
                             <div class="projects-grid">
-                                <!-- Project 1 -->
+                                <!-- Store-Item Demand Forecasting -->
                                 <div class="project-card">
                                     <div class="project-content">
-                                        <h3>⚔️ Military Expenditure Analysis</h3>
-                                        <p>A comprehensive global analysis of defense spending patterns using advanced Data Science techniques. Uncovered insights into military budgets, trends, and strategic allocations across nations.</p>
+                                        <h3>🛒 Store-Item Demand Forecasting</h3>
+                                        <p>Built for the TCS iON Data Science Challenge, this project predicts daily sales for each store-item combination using historical sales data. Techniques include EDA, baseline modeling, and result export for competition submission.</p>
                                         <div class="project-tech">
                                             <span>Python</span>
                                             <span>Pandas</span>
-                                            <span>Matplotlib</span>
-                                            <span>Data Analysis</span>
+                                            <span>NumPy</span>
+                                            <span>Scikit-learn</span>
                                         </div>
                                         <div class="project-links">
-                                            <a href="https://github.com/Sumit-Agnihotri" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                                            <a href="https://github.com/Sumit-Agnihotri/Store_Item_Forecasting" target="_blank"><i class="fab fa-github"></i> View Code</a>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Project 2 -->
+                                <!-- Diabetes Prediction App -->
                                 <div class="project-card">
                                     <div class="project-content">
-                                        <h3>📊 Customer Churn Prediction</h3>
-                                        <p>Built a Machine Learning model to predict customer retention and identify at-risk customers. Utilized classification algorithms to help businesses reduce churn and increase loyalty.</p>
+                                        <h3>🩺 Diabetes Prediction App</h3>
+                                        <p>A Streamlit web app that predicts diabetes risk using the Pima Indians Diabetes Dataset. Users input health parameters, and the app provides instant predictions using a scikit-learn model.</p>
                                         <div class="project-tech">
                                             <span>Python</span>
-                                            <span>Scikit-Learn</span>
-                                            <span>ML Algorithms</span>
-                                            <span>Data Preprocessing</span>
+                                            <span>Streamlit</span>
+                                            <span>scikit-learn</span>
+                                            <span>Pandas</span>
                                         </div>
                                         <div class="project-links">
-                                            <a href="https://github.com/Sumit-Agnihotri" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                                            <a href="https://github.com/Sumit-Agnihotri/Diabetes_Prediction_App" target="_blank"><i class="fab fa-github"></i> View Code</a>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Project 3 -->
+                                <!-- Google Play Store Data Analysis -->
                                 <div class="project-card">
                                     <div class="project-content">
-                                        <h3>🍽️ Zomato Data Analysis</h3>
-                                        <p>Analyzed restaurant trends, customer preferences, and ratings using Zomato's dataset. Created interactive visualizations and dashboards to reveal insights about the food industry.</p>
+                                        <h3>📱 Google Play Store Data Analysis</h3>
+                                        <p>Internship project analyzing app reviews, ratings, and install trends on the Google Play Store. Includes sentiment analysis, category comparisons, and interactive visualizations with Plotly.</p>
                                         <div class="project-tech">
                                             <span>Python</span>
                                             <span>Pandas</span>
-                                            <span>Power BI</span>
+                                            <span>Plotly</span>
+                                            <span>NumPy</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="https://github.com/Sumit-Agnihotri/GOOGLE_PLAY_STORE_ANALYSIS" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- India Job Market Analysis -->
+                                <div class="project-card">
+                                    <div class="project-content">
+                                        <h3>💼 India Job Market Analysis</h3>
+                                        <p>Data-driven exploration of the Indian job market using real-world datasets. The project uncovers trends, demand, and insights for various roles and industries.</p>
+                                        <div class="project-tech">
+                                            <span>Python</span>
+                                            <span>Pandas</span>
+                                            <span>Jupyter Notebook</span>
+                                        </div>
+                                        <div class="project-links">
+                                            <a href="https://github.com/Sumit-Agnihotri/INDIA_JOB_MARKET_PROJECT" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Sales Dashboard (Looker Studio) -->
+                                <div class="project-card">
+                                    <div class="project-content">
+                                        <h3>� Sales Dashboard (Looker Studio)</h3>
+                                        <p>An interactive dashboard built with Looker Studio to visualize and analyze sales data, providing actionable insights for business decisions.</p>
+                                        <div class="project-tech">
+                                            <span>Looker Studio</span>
                                             <span>Data Visualization</span>
                                         </div>
                                         <div class="project-links">
-                                            <a href="https://github.com/Sumit-Agnihotri" target="_blank"><i class="fab fa-github"></i> View Code</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Project 4 -->
-                                <div class="project-card">
-                                    <div class="project-content">
-                                        <h3>🤖 AI Chatbot using LLMs & RAG</h3>
-                                        <p>Developed an intelligent chatbot leveraging Large Language Models and Retrieval-Augmented Generation for contextual and accurate responses. Experimental project pushing the boundaries of conversational AI.</p>
-                                        <div class="project-tech">
-                                            <span>Python</span>
-                                            <span>LLMs</span>
-                                            <span>RAG</span>
-                                            <span>NLP</span>
-                                        </div>
-                                        <div class="project-links">
-                                            <a href="https://github.com/Sumit-Agnihotri" target="_blank"><i class="fab fa-github"></i> View Code</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Project 5 -->
-                                <div class="project-card">
-                                    <div class="project-content">
-                                        <h3>👁️ Image Recognition using CNN</h3>
-                                        <p>Built and trained Convolutional Neural Networks for object classification and image recognition tasks. Achieved high accuracy in detecting and classifying various objects from images.</p>
-                                        <div class="project-tech">
-                                            <span>Python</span>
-                                            <span>TensorFlow</span>
-                                            <span>OpenCV</span>
-                                            <span>Deep Learning</span>
-                                        </div>
-                                        <div class="project-links">
-                                            <a href="https://github.com/Sumit-Agnihotri" target="_blank"><i class="fab fa-github"></i> View Code</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Project 6 -->
-                                <div class="project-card">
-                                    <div class="project-content">
-                                        <h3>📈 Sales Forecasting Dashboard</h3>
-                                        <p>Created an interactive Power BI dashboard for sales trend analysis and future predictions. Empowered business decisions through data-driven insights and visualizations.</p>
-                                        <div class="project-tech">
-                                            <span>Power BI</span>
-                                            <span>Excel</span>
-                                            <span>Data Modeling</span>
-                                            <span>Forecasting</span>
-                                        </div>
-                                        <div class="project-links">
-                                            <a href="https://github.com/Sumit-Agnihotri" target="_blank"><i class="fab fa-github"></i> View Code</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Project 8 -->
-                                <div class="project-card">
-                                    <div class="project-content">
-                                        <h3>🧬 Sentiment Analysis System</h3>
-                                        <p>Built a Natural Language Processing system to analyze sentiment from text data. Classified emotions and opinions to extract meaningful insights from customer feedback.</p>
-                                        <div class="project-tech">
-                                            <span>Python</span>
-                                            <span>NLP</span>
-                                            <span>NLTK</span>
-                                            <span>Machine Learning</span>
-                                        </div>
-                                        <div class="project-links">
-                                            <a href="https://github.com/Sumit-Agnihotri" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                                            <a href="https://lookerstudio.google.com/u/0/reporting/c6baa854-1ad3-4b05-9830-53523ee28abe/page/qpnSF?s=g_Wisr_sEX0" target="_blank"><i class="fas fa-chart-bar"></i> View Dashboard</a>
                                         </div>
                                     </div>
                                 </div>

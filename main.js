@@ -58,8 +58,13 @@ function setupSmoothScroll() {
 function toggleMenu() {
     const navLinks = document.getElementById('navLinks');
     navLinks.classList.toggle('open');
-    // Accessibility: focus first link if opening
-    if (navLinks.classList.contains('open')) {
+    // Accessibility: update ARIA attributes
+    const menuToggle = document.querySelector('.menu-toggle');
+    const isOpen = navLinks.classList.contains('open');
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', String(isOpen));
+    navLinks.setAttribute('aria-hidden', String(!isOpen));
+    // Focus management: focus first link if opening
+    if (isOpen) {
         const firstLink = navLinks.querySelector('a');
         if (firstLink) firstLink.focus();
     }
@@ -84,6 +89,11 @@ function setupMenuKeyboard() {
                 e.preventDefault();
                 toggleMenu();
             }
+        });
+        // Ensure space toggles as click for screen readers
+        menuToggle.addEventListener('click', () => {
+            const navLinks = document.getElementById('navLinks');
+            menuToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('open')));
         });
     }
 }
@@ -135,23 +145,24 @@ function setupObserver() {
 
 // ========== ACTIVE NAV LINK ON SCROLL ========== //
 function setupActiveNav() {
-    window.addEventListener('scroll', () => {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (scrollY >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -45% 0px',
+        threshold: 0
+    };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.getAttribute('id');
+            const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+            if (entry.isIntersecting) {
+                navLinks.forEach(l => l.classList.remove('active'));
+                if (link) link.classList.add('active');
             }
         });
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').slice(1) === current) {
-                link.classList.add('active');
-            }
-        });
-    });
+    }, observerOptions);
+    sections.forEach(section => observer.observe(section));
 }
 
 // ========== INITIALIZE ALL ========== //
