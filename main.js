@@ -206,6 +206,7 @@ window.addEventListener('load', () => {
         }
     });
     setupParallaxHero();
+    setupNavMap();
 });
 
 // ========== PARALLAX HERO BACKGROUND ========== //
@@ -215,5 +216,45 @@ function setupParallaxHero() {
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         parallax.style.transform = `translateY(${scrolled * 0.3}px)`;
+    });
+}
+
+// ========== MOBILE NAV MAP (FLOW) ========== //
+function setupNavMap() {
+    const btn = document.getElementById('navMapBtn');
+    const overlay = document.getElementById('navMap');
+    const closeBtn = document.getElementById('navMapClose');
+    if (!btn || !overlay || !closeBtn) return;
+
+    const open = () => {
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        btn.setAttribute('aria-expanded', 'true');
+        // focus first link
+        const firstLink = overlay.querySelector('a');
+        if (firstLink) firstLink.focus();
+    };
+    const close = () => {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.focus();
+    };
+
+    btn.addEventListener('click', open);
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', (e) => {
+        // close when clicking backdrop (not the dialog content)
+        if (e.target === overlay) close();
+    });
+    // Close on ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) close();
+    });
+    // When clicking a map node, close after navigation
+    overlay.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            close();
+        });
     });
 }
