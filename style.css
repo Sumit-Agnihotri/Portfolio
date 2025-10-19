@@ -37,7 +37,8 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: linear-gradient(135deg, #101624 0%, #18243a 100%);
+    background: linear-gradient(135deg, rgba(16,22,36,0.4) 0%, rgba(24,36,58,0.5) 100%), 
+                url('Wallpapers/Wallpaper 1.jpg') center center / cover no-repeat fixed;
     overflow: hidden;
 }
 .animated-bg::before {
@@ -185,8 +186,8 @@ nav ul li a.active, nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Cinematic dark gradient background */
-    background: linear-gradient(135deg, #101624 0%, #18243a 100%);
+    /* Transparent to show background wallpaper */
+    background: transparent;
     position: relative;
     overflow: hidden;
     padding-top: 70px;
