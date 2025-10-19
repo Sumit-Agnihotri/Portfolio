@@ -7,16 +7,23 @@
 ====================================================
 */
 
-// ========== DATA FLOW PARTICLES ========== //
+// ========== KRATOS EMBER PARTICLES ========== //
 function createDataParticles() {
     const dataFlow = document.getElementById('dataFlow');
-    const particleCount = 30;
+    const particleCount = 40; // Increased for more dramatic effect
+    
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'data-particle';
         particle.style.left = Math.random() * 100 + '%';
         particle.style.animationDelay = Math.random() * 15 + 's';
-        particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+        particle.style.animationDuration = (6 + Math.random() * 4) + 's'; // Faster particles!
+        
+        // Random ember colors (orange/red/gold for Kratos theme)
+        const colors = ['#ff6b35', '#ffd369', '#f77f00', '#00d4ff'];
+        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.boxShadow = `0 0 ${10 + Math.random() * 15}px ${particle.style.background}`;
+        
         dataFlow.appendChild(particle);
     }
 }
@@ -98,16 +105,22 @@ function setupMenuKeyboard() {
     }
 }
 
-// ========== SCROLL TO TOP BUTTON ========== //
+// ========== WARRIOR SCROLL BUTTON ========== //
 function setupScrollTop() {
     const scrollTop = document.getElementById('scrollTop');
+    const header = document.querySelector('header');
+    
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
             scrollTop.classList.add('show');
+            // Add warrior mode to header on scroll
+            header.classList.add('warrior-mode');
         } else {
             scrollTop.classList.remove('show');
+            header.classList.remove('warrior-mode');
         }
     });
+    
     // Keyboard accessibility
     scrollTop.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -123,7 +136,7 @@ function scrollToTop() {
     });
 }
 
-// ========== SECTION ANIMATIONS ========== //
+// ========== KRATOS BATTLE-READY ANIMATIONS ========== //
 function setupObserver() {
     const observerOptions = {
         threshold: 0.1,
@@ -132,11 +145,20 @@ function setupObserver() {
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                // Stagger animation for cards in a grid
+                const parent = entry.target.parentElement;
+                const siblings = Array.from(parent.children);
+                const index = siblings.indexOf(entry.target);
+                
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 50); // 50ms delay between each card - faster!
+                
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
+    
     document.querySelectorAll('.fade-in, .skill-card, .project-card, .education-card, .honor-item, .contact-card').forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);
