@@ -1,225 +1,225 @@
 /*
 ====================================================
-  Cinematic Portfolio JS for Sumit Agnihotri
+  Portfolio UI Script
   Author: Sumit Agnihotri
   File: main.js
-  Description: Modular, grouped, and well-commented JS for a cinematic, warrior-themed portfolio.
+  Description: Navigation, animations, particles, and accessibility helpers.
 ====================================================
 */
 
-// ========== KRATOS EMBER PARTICLES ========== //
 function createDataParticles() {
     const dataFlow = document.getElementById('dataFlow');
-    const particleCount = 40; // Increased for more dramatic effect
-    
+    if (!dataFlow) return;
+
+    const particleCount = 110;
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'data-particle';
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 15 + 's';
-        particle.style.animationDuration = (6 + Math.random() * 4) + 's'; // Faster particles!
-        
-        // Random ember colors (orange/red/gold for Kratos theme)
-        const colors = ['#ff6b35', '#ffd369', '#f77f00', '#00d4ff'];
-        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-        particle.style.boxShadow = `0 0 ${10 + Math.random() * 15}px ${particle.style.background}`;
-        
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        particle.style.animationDelay = `${Math.random() * 15}s`;
+        particle.style.animationDuration = `${8 + Math.random() * 10}s`;
+        particle.style.width = `${1 + Math.random() * 2.2}px`;
+        particle.style.height = particle.style.width;
+        particle.style.opacity = `${0.35 + Math.random() * 0.55}`;
+
+        const colors = ['#d4b27a', '#e2cfa7', '#b8925f', '#8f6d45', '#f8f4ec', '#bfd6ff', '#f3e6c9'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.background = color;
+        particle.style.boxShadow = `0 0 ${6 + Math.random() * 18}px ${color}`;
+
         dataFlow.appendChild(particle);
     }
 }
 
-// ========== HERO SECTION TYPING EFFECT ========== //
 function heroTypingEffect() {
     const heroTitle = document.querySelector('.hero-content h1');
     if (!heroTitle) return;
+
     const text = heroTitle.textContent;
     heroTitle.textContent = '';
+
     let i = 0;
     function type() {
         if (i < text.length) {
             heroTitle.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, 40);
+            i += 1;
+            setTimeout(type, 36);
         }
     }
     type();
 }
 
-// ========== SMOOTH SCROLLING ========== //
 function setupSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function onClick(e) {
+            const href = this.getAttribute('href');
+            if (!href) return;
+            const target = document.querySelector(href);
+            if (!target) return;
+
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 }
 
-// ========== MOBILE MENU ========== //
 function toggleMenu() {
     const navLinks = document.getElementById('navLinks');
-    navLinks.classList.toggle('open');
-    // Accessibility: update ARIA attributes
     const menuToggle = document.querySelector('.menu-toggle');
+    if (!navLinks) return;
+
+    navLinks.classList.toggle('open');
     const isOpen = navLinks.classList.contains('open');
+
     if (menuToggle) menuToggle.setAttribute('aria-expanded', String(isOpen));
     navLinks.setAttribute('aria-hidden', String(!isOpen));
-    // Focus management: focus first link if opening
+
     if (isOpen) {
         const firstLink = navLinks.querySelector('a');
         if (firstLink) firstLink.focus();
     }
 }
+
 function closeMenu() {
     const navLinks = document.getElementById('navLinks');
-    navLinks.classList.remove('open');
-}
-// Close menu on nav link click (mobile)
-function setupMenuLinks() {
-    const navLinks = document.getElementById('navLinks');
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => closeMenu());
-    });
-}
-// Keyboard accessibility for menu
-function setupMenuKeyboard() {
     const menuToggle = document.querySelector('.menu-toggle');
-    if (menuToggle) {
-        menuToggle.addEventListener('keydown', e => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleMenu();
-            }
-        });
-        // Ensure space toggles as click for screen readers
-        menuToggle.addEventListener('click', () => {
-            const navLinks = document.getElementById('navLinks');
-            menuToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('open')));
-        });
-    }
+    if (!navLinks) return;
+
+    navLinks.classList.remove('open');
+    navLinks.setAttribute('aria-hidden', 'true');
+    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
 }
 
-// ========== WARRIOR SCROLL BUTTON ========== //
+function setupMenuLinks() {
+    const navLinks = document.getElementById('navLinks');
+    if (!navLinks) return;
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', closeMenu);
+    });
+}
+
+function setupMenuKeyboard() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (!menuToggle) return;
+
+    menuToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleMenu();
+        }
+    });
+}
+
 function setupScrollTop() {
     const scrollTop = document.getElementById('scrollTop');
     const header = document.querySelector('header');
-    
+    if (!scrollTop || !header) return;
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
+        if (window.scrollY > 280) {
             scrollTop.classList.add('show');
-            // Add warrior mode to header on scroll
-            header.classList.add('warrior-mode');
+            header.classList.add('obscur-mode');
         } else {
             scrollTop.classList.remove('show');
-            header.classList.remove('warrior-mode');
+            header.classList.remove('obscur-mode');
         }
     });
-    
-    // Keyboard accessibility
-    scrollTop.addEventListener('keydown', e => {
+
+    scrollTop.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             scrollToTop();
         }
     });
 }
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+
+function setupScrollProgress() {
+    const progress = document.getElementById('scrollProgress');
+    if (!progress) return;
+
+    const update = () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const ratio = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
+        progress.style.width = `${Math.min(100, Math.max(0, ratio))}%`;
+    };
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
 }
 
-// ========== KRATOS BATTLE-READY ANIMATIONS ========== //
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 function setupObserver() {
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        rootMargin: '0px 0px -90px 0px'
     };
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Stagger animation for cards in a grid
-                const parent = entry.target.parentElement;
-                const siblings = Array.from(parent.children);
-                const index = siblings.indexOf(entry.target);
-                
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, index * 50); // 50ms delay between each card - faster!
-                
-                observer.unobserve(entry.target);
-            }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            const parent = entry.target.parentElement;
+            const siblings = parent ? Array.from(parent.children) : [entry.target];
+            const index = siblings.indexOf(entry.target);
+
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+            }, Math.max(0, index) * 55);
+
+            observer.unobserve(entry.target);
         });
     }, observerOptions);
-    
-    document.querySelectorAll('.fade-in, .skill-card, .project-card, .education-card, .honor-item, .contact-card').forEach(el => {
-        el.classList.add('fade-in');
-        observer.observe(el);
-    });
+
+    document
+        .querySelectorAll('.fade-in, .skill-card, .project-card, .education-card, .honor-item, .contact-card')
+        .forEach((el) => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
 }
 
-// ========== ACTIVE NAV LINK ON SCROLL ========== //
 function setupActiveNav() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -45% 0px',
-        threshold: 0
-    };
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const id = entry.target.getAttribute('id');
-            const link = document.querySelector(`.nav-links a[href="#${id}"]`);
-            if (entry.isIntersecting) {
-                navLinks.forEach(l => l.classList.remove('active'));
-                if (link) link.classList.add('active');
-            }
-        });
-    }, observerOptions);
-    sections.forEach(section => observer.observe(section));
+    if (!sections.length || !navLinks.length) return;
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                const id = entry.target.getAttribute('id');
+                if (!id || !entry.isIntersecting) return;
+
+                navLinks.forEach((l) => l.classList.remove('active'));
+                const current = document.querySelector(`.nav-links a[href="#${id}"]`);
+                if (current) current.classList.add('active');
+            });
+        },
+        {
+            root: null,
+            rootMargin: '0px 0px -45% 0px',
+            threshold: 0
+        }
+    );
+
+    sections.forEach((section) => observer.observe(section));
 }
 
-// ========== INITIALIZE ALL ========== //
-window.addEventListener('load', () => {
-    createDataParticles();
-    heroTypingEffect();
-    setupSmoothScroll();
-    setupScrollTop();
-    setupObserver();
-    setupActiveNav();
-    setupMenuLinks();
-    setupMenuKeyboard();
-    // Accessibility: close menu on outside click
-    document.addEventListener('click', (e) => {
-        const navLinks = document.getElementById('navLinks');
-        const menuToggle = document.querySelector('.menu-toggle');
-        if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && e.target !== menuToggle) {
-            closeMenu();
-        }
-    });
-    setupParallaxHero();
-    setupNavMap();
-});
-
-// ========== PARALLAX HERO BACKGROUND ========== //
 function setupParallaxHero() {
     const parallax = document.querySelector('.parallax-bg');
     if (!parallax) return;
+
     window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        parallax.style.transform = `translateY(${scrolled * 0.3}px)`;
+        parallax.style.transform = `translateY(${window.scrollY * 0.22}px)`;
     });
 }
 
-// ========== MOBILE NAV MAP (FLOW) ========== //
 function setupNavMap() {
     const btn = document.getElementById('navMapBtn');
     const overlay = document.getElementById('navMap');
@@ -230,10 +230,11 @@ function setupNavMap() {
         overlay.classList.add('open');
         overlay.setAttribute('aria-hidden', 'false');
         btn.setAttribute('aria-expanded', 'true');
-        // focus first link
+
         const firstLink = overlay.querySelector('a');
         if (firstLink) firstLink.focus();
     };
+
     const close = () => {
         overlay.classList.remove('open');
         overlay.setAttribute('aria-hidden', 'true');
@@ -243,18 +244,40 @@ function setupNavMap() {
 
     btn.addEventListener('click', open);
     closeBtn.addEventListener('click', close);
+
     overlay.addEventListener('click', (e) => {
-        // close when clicking backdrop (not the dialog content)
         if (e.target === overlay) close();
     });
-    // Close on ESC
+
+    overlay.querySelectorAll('a').forEach((a) => {
+        a.addEventListener('click', close);
+    });
+
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && overlay.classList.contains('open')) close();
     });
-    // When clicking a map node, close after navigation
-    overlay.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-            close();
-        });
-    });
 }
+
+window.addEventListener('load', () => {
+    createDataParticles();
+    heroTypingEffect();
+    setupSmoothScroll();
+    setupScrollProgress();
+    setupScrollTop();
+    setupObserver();
+    setupActiveNav();
+    setupMenuLinks();
+    setupMenuKeyboard();
+    setupParallaxHero();
+    setupNavMap();
+
+    document.addEventListener('click', (e) => {
+        const navLinks = document.getElementById('navLinks');
+        const menuToggle = document.querySelector('.menu-toggle');
+        if (!navLinks || !menuToggle) return;
+
+        if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && e.target !== menuToggle) {
+            closeMenu();
+        }
+    });
+});
