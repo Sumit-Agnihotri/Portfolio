@@ -506,6 +506,13 @@ section { padding: 6.5rem 0; position: relative; }
   align-items: center;
   position: relative;
 }
+.portrait-link {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
 .ring-wrap {
   width: 290px; height: 290px;
   border-radius: 50%;
@@ -514,7 +521,8 @@ section { padding: 6.5rem 0; position: relative; }
     var(--gold), var(--rose), var(--emerald), var(--violet-d)
   );
   padding: 3px;
-  animation: spin 14s linear infinite;
+  animation: spinLift 14s linear infinite;
+  will-change: transform;
 }
 .ring-inner {
   width: 100%; height: 100%;
@@ -526,6 +534,8 @@ section { padding: 6.5rem 0; position: relative; }
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(167,139,250,.12);
+  animation: counterSpin 14s linear infinite;
+  will-change: transform;
 }
 .ring-inner::after {
   content: '';
@@ -533,14 +543,11 @@ section { padding: 6.5rem 0; position: relative; }
   inset: 0;
   background: radial-gradient(circle at 38% 28%, rgba(167,139,250,.2), transparent 58%);
 }
-.initials {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 4.8rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #d8ccff, var(--gold));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.portrait-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
   z-index: 1;
   user-select: none;
 }
@@ -1271,7 +1278,7 @@ footer {
   .hero-actions    { justify-content: center; }
   .hero-visual     { order: -1; }
   .ring-wrap       { width: 210px; height: 210px; }
-  .initials        { font-size: 3.5rem; }
+  .portrait-photo  { object-position: center 14%; }
   .c3, .c4         { display: none; }
   .stats-grid      { grid-template-columns: repeat(2, 1fr); }
   .about-grid      { grid-template-columns: 1fr; }
@@ -1314,9 +1321,14 @@ footer {
   33%       { transform: translate(22px, -28px) scale(1.06); }
   66%       { transform: translate(-18px, 14px) scale(.95); }
 }
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+@keyframes spinLift {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-12px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+@keyframes counterSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
 }
 @keyframes chipBob {
   0%, 100% { transform: translateY(0); }
