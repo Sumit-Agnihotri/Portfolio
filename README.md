@@ -1,118 +1,115 @@
-# ⚔️ Sumit Agnihotri — Data Warrior
+# Sumit Agnihotri — Portfolio
 
-![Profile Banner](https://img.shields.io/badge/Data%20Warrior-Discipline%20%7C%20AI%20Engineer-blue?style=for-the-badge&logo=python)
+> Data Analyst & AI Engineer in Progress  
+> Ranked **#1 in Programming** among Amity University Online learners on GeeksforGeeks
 
----
-
-## 🧠 About Me
-
-> In a world flooded with noise, I chose clarity. Surrounded by chaos and pressure, I decided to carve my own fate — not through luck, but through logic, discipline, and relentless pursuit of knowledge.
-
-I am **Sumit Agnihotri** — a Data Science student, an AI engineer in the making, and a warrior in the realm of intelligence. My mission: **turn data into decisions, chaos into clarity, and intelligence into legacy.**
-
-> "In a world full of data, I chose to become the one who understands its chaos." 💀
+🔗 Live site: _(add your GitHub Pages URL here after deployment)_
 
 ---
 
-## 💡 Tagline
+## 📁 File Structure
 
-> ⚙️ *I work on data, for data, and to gain from data.* 📊
-
----
-
-## 🧰 Tech Stack
-
-**Languages & Tools:**
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
-![Excel](https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoft-excel&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
-![VSCode](https://img.shields.io/badge/VSCode-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white)
-
-**Domains:** Data Science, Machine Learning, Deep Learning, AI, Computer Vision, LLMs, RAG
-
-**Libraries:** Pandas, NumPy, Matplotlib, Scikit-Learn, OpenCV, TensorFlow, PyTorch
-
-**Databases:** SQL, MongoDB
+```
+portfolio/
+├── index.html                  ← Main HTML (all sections)
+├── style.css                   ← Full stylesheet (tokens, layout, components, animations)
+├── main.js                     ← All JavaScript (cursor, particles, tabs, form, etc.)
+├── Sumit_Agnihotri_Resume.pdf  ← Downloadable resume PDF
+└── README.md                   ← This file
+```
 
 ---
 
-## 💼 Projects
+## 🚀 Deploying to GitHub Pages
 
-- **⚔️ Military Expenditure Analysis** — Global defense spending analysis using Data Science.
-- **📊 Customer Churn Prediction** — ML model for predicting customer retention.
-- **🍽️ Zomato Data Analysis** — Restaurant trends and visualization with Pandas & Power BI.
-- **🤖 AI Chatbot using LLMs & RAG** — Experimental contextual chatbot with LLMs.
-- **👁️ Image Recognition using CNN** — Deep learning for object classification.
-- **📈 Sales Forecasting Dashboard** — Power BI dashboard for sales trends and forecasting.
-- **🧬 Sentiment Analysis System** — NLP system for extracting sentiment from text.
+### Step 1 — Create a GitHub Repository
+1. Go to [github.com](https://github.com) and click **New repository**
+2. Name it exactly: `yourusername.github.io`  
+   _(e.g. `Sumit-Agnihotri.github.io` — this gives you a free custom URL)_
+3. Set to **Public**, click **Create repository**
 
----
+### Step 2 — Upload Files
+**Option A — GitHub Web UI (easiest):**
+1. Open your new repo
+2. Click **Add file → Upload files**
+3. Drag and drop all 4 files: `index.html`, `style.css`, `main.js`, `Sumit_Agnihotri_Resume.pdf`
+4. Click **Commit changes**
 
-## 🎓 Education
+**Option B — Git CLI:**
+```bash
+git init
+git add .
+git commit -m "Initial portfolio commit"
+git branch -M main
+git remote add origin https://github.com/Sumit-Agnihotri/Sumit-Agnihotri.github.io.git
+git push -u origin main
+```
 
-**Amity University, Uttar Pradesh**  
-Bachelor of Computer Applications (Data Science)  
-2023 – Present
-
----
-
-## 🏆 Achievements
-
-- Built multiple Data Science projects and visualizations.
-- Developed analytical models for customer churn prediction.
-- Created an early portfolio of ML, AI, and IoT-based works.
-
----
-
-## 🧾 Certifications
-
-*To be updated dynamically (Python, ML, AI, Power BI, Excel, etc.)*
-
----
-
-## 🧭 My Journey
-
-From being a student surrounded by chaos and pressure, I decided to carve my own fate. I learned that strength is not about shouting louder — it’s about thinking deeper. Each dataset I analyzed was like a battlefield of patterns and truth. Each algorithm was a weapon, forged through logic and discipline. Now, I stand as a Data Warrior, ready to turn intelligence into legacy.
+### Step 3 — Enable GitHub Pages
+1. Go to repo **Settings → Pages**
+2. Under **Source**, select `main` branch and `/ (root)` folder
+3. Click **Save**
+4. Your site will be live at: `https://Sumit-Agnihotri.github.io` (takes ~1–2 min)
 
 ---
 
-## ⚔️ Code of Honor
+## ✨ Features
 
-- **Discipline** – Even without motivation.
-- **Courage** – Act without fear.
-- **Consistency** – Stay in motion.
-- **Truth** – Face reality as it is.
-- **Self-Respect** – Never bend your worth.
-
----
-
-## 💬 Contact
-
-- 📧 Email: sagnihotri9710@gmail.com
-- 🌐 [GitHub](https://github.com/Sumit-Agnihotri)
-- 💼 [LinkedIn](https://linkedin.com/in/sumit-agnihotri)
-
----
-
-## 🧭 Future Goals
-
-- Master Data Science, AI, LLMs, and RAG architectures.
-- Build a unique identity in AI and analytics through public projects.
-- Secure a 6–7 figure income and financial stability.
-- Inspire others through discipline, storytelling, and skill.
-- Live a life of legacy, not luxury.
+| Feature | Details |
+|---|---|
+| **Custom Cursor** | Smooth glow dot + trailing ring |
+| **Particle Canvas** | 65 multi-color floating particles |
+| **Typing Effect** | Loops through 5 phrases with delete animation |
+| **Scroll Progress** | Gradient bar at top of page |
+| **Stats Counters** | Animated number counters on scroll |
+| **Reveal Animations** | Staggered IntersectionObserver fade-ins |
+| **Resume Tabs** | Education / Skills / Certifications / Achievements |
+| **Resume Download** | Direct PDF download link |
+| **Contact Form** | Opens email client with pre-filled fields |
+| **Active Nav** | Highlights current section in navigation |
+| **Mobile Menu** | Smooth hamburger menu with keyboard support |
+| **Parallax Orbs** | Background orbs shift on scroll |
+| **Accessible** | Skip link, ARIA labels, keyboard nav, reduced-motion |
+| **Responsive** | Mobile-first, works on all screen sizes |
 
 ---
 
-## 💀 Final Line
+## 🎨 Customization
 
-> "In a world full of data, I chose to become the one who understands its chaos."
+### Change color palette
+Edit CSS variables at the top of `style.css`:
+```css
+:root {
+  --violet:   #a78bfa;   /* primary accent */
+  --gold:     #f0c060;   /* highlight */
+  --cyan:     #56d8f0;   /* secondary */
+  --emerald:  #34d399;   /* success / badges */
+  /* ... */
+}
+```
+
+### Add a new project
+Copy a `.proj-card` block in `index.html` and update the content.
+
+### Add a profile photo
+Replace the `.ring-inner` div content in `index.html`:
+```html
+<div class="ring-inner">
+  <img src="your-photo.jpg" alt="Sumit Agnihotri" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
+</div>
+```
+Place your photo in the same folder as `index.html`.
 
 ---
 
-*⚔️ Engineered for Precision | Discipline | Legacy*
+## 📬 Contact
+
+**Sumit Agnihotri**  
+📧 sagnihotri9710@gmail.com  
+📞 +91-7388575006  
+🐙 [github.com/Sumit-Agnihotri](https://github.com/Sumit-Agnihotri)  
+💼 [linkedin.com/in/sumit-agnihotri](https://linkedin.com/in/sumit-agnihotri)
+
+---
+
+*© 2026 Sumit Agnihotri. Built with purpose.*

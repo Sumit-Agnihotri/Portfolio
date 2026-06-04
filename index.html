@@ -1,391 +1,754 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sumit Agnihotri - Data Scientist and AI Engineer portfolio focused on machine learning, analytics, and practical AI solutions.">
-    <meta name="keywords" content="Sumit Agnihotri, Data Science, AI Engineer, Machine Learning, Deep Learning, Computer Vision, LLMs, RAG, Python, Portfolio">
-    <meta name="author" content="Sumit Agnihotri">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Sumit Agnihotri | Data Scientist and AI Engineer">
-    <meta property="og:description" content="Portfolio showcasing projects in ML, analytics, and AI engineering.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://github.com/Sumit-Agnihotri">
-    <title>Sumit Agnihotri | Data Scientist and AI Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sumit Agnihotri — Data Analyst & AI Engineer. Ranked #1 in Programming at Amity University Online on GeeksforGeeks." />
+  <meta name="author" content="Sumit Agnihotri" />
+  <meta name="keywords" content="Sumit Agnihotri, Data Analyst, Data Science, Machine Learning, Python, SQL, Portfolio" />
+  <meta property="og:title" content="Sumit Agnihotri | Data Analyst & AI Engineer" />
+  <meta property="og:description" content="Portfolio showcasing real-world data science projects, ML models, and BI dashboards." />
+  <meta property="og:type" content="website" />
+  <title>Sumit Agnihotri | Data Analyst & AI Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <a href="#main-content" class="skip-link" tabindex="0">Skip to main content</a>
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-    <div class="animated-bg"></div>
-    <div class="bg-orbs" aria-hidden="true">
-        <span class="orb orb-a"></span>
-        <span class="orb orb-b"></span>
-        <span class="orb orb-c"></span>
-        <span class="orb orb-d"></span>
-    </div>
-    <div class="data-flow" id="dataFlow"></div>
+  <!-- ░░ CURSOR ░░ -->
+  <div id="cur" aria-hidden="true"></div>
+  <div id="cur-ring" aria-hidden="true"></div>
 
-    <header>
-        <nav aria-label="Main Navigation" class="w3-bar w3-padding-small">
-            <div class="container w3-container">
-                <div class="logo w3-bar-item">SUMIT AGNIHOTRI</div>
-                <button class="menu-toggle w3-bar-item w3-right" onclick="toggleMenu()" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation menu">
-                    <span></span><span></span><span></span>
-                </button>
-                <ul class="nav-links w3-bar w3-hide-small w3-right" id="navLinks" role="menubar" aria-hidden="true">
-                    <li class="w3-bar-item"><a href="#hero" onclick="closeMenu()">Home</a></li>
-                    <li class="w3-bar-item"><a href="#about" onclick="closeMenu()">About</a></li>
-                    <li class="w3-bar-item"><a href="#skills" onclick="closeMenu()">Skills</a></li>
-                    <li class="w3-bar-item"><a href="#projects" onclick="closeMenu()">Projects</a></li>
-                    <li class="w3-bar-item"><a href="#journey" onclick="closeMenu()">Journey</a></li>
-                    <li class="w3-bar-item"><a href="#contact" onclick="closeMenu()">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+  <!-- ░░ SCROLL PROGRESS ░░ -->
+  <div id="sprog" aria-hidden="true"></div>
 
-    <main id="main-content" tabindex="-1">
-        <section class="hero" id="hero" aria-label="Hero">
-            <div class="parallax-bg" aria-hidden="true"></div>
-            <div class="container">
-                <div class="hero-content">
-                    <p class="hero-kicker">Portfolio 2026</p>
-                    <h1>Sumit Agnihotri</h1>
-                    <h2>Data Science Student and AI Engineer in Progress</h2>
-                    <p>Analytical. Intentional. Build-first. Turning complexity into practical intelligence.</p>
-                    <div class="hero-btns">
-                        <a href="#projects" class="btn-primary">View Projects</a>
-                        <a href="#contact" class="btn-secondary">Contact Me</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- ░░ BACKGROUNDS ░░ -->
+  <div class="bg-aurora" aria-hidden="true"></div>
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb o1"></span>
+    <span class="orb o2"></span>
+    <span class="orb o3"></span>
+    <span class="orb o4"></span>
+  </div>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
-        <section class="about" id="about" aria-label="About">
-            <div class="container">
-                <div class="section-title">
-                    <h2>About</h2>
-                    <h3>Who I Am</h3>
-                </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Hello, I am <strong>Sumit Agnihotri</strong>, a Data Science student and aspiring AI Engineer. I focus on practical machine learning, thoughtful experimentation, and shipping work that solves real problems.</p>
-                        <p>I am building strong depth in Python, data analysis, ML systems, and modern AI workflows. My goal is to create reliable, high-impact solutions that connect technical rigor with business value.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- ░░ SKIP LINK ░░ -->
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-        <section class="skills" id="skills" aria-label="Skills">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Skills</h2>
-                    <h3>Core Technical Capabilities</h3>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3><i class="fas fa-code"></i> Languages</h3>
-                        <div class="skill-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">SQL</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <h3><i class="fas fa-brain"></i> Machine Learning</h3>
-                        <div class="skill-tags">
-                            <span class="tag">Scikit-Learn</span>
-                            <span class="tag">TensorFlow</span>
-                            <span class="tag">PyTorch</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <h3><i class="fas fa-eye"></i> Computer Vision</h3>
-                        <div class="skill-tags">
-                            <span class="tag">OpenCV</span>
-                            <span class="tag">CNN</span>
-                            <span class="tag">Image Processing</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <h3><i class="fas fa-chart-line"></i> Data Analysis</h3>
-                        <div class="skill-tags">
-                            <span class="tag">Pandas</span>
-                            <span class="tag">NumPy</span>
-                            <span class="tag">Matplotlib</span>
-                            <span class="tag">Seaborn</span>
-                            <span class="tag">Plotly</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <h3><i class="fas fa-robot"></i> AI and LLMs</h3>
-                        <div class="skill-tags">
-                            <span class="tag">Large Language Models</span>
-                            <span class="tag">RAG</span>
-                            <span class="tag">NLP</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <h3><i class="fas fa-chart-bar"></i> Visualization</h3>
-                        <div class="skill-tags">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Excel</span>
-                            <span class="tag">Tableau</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <h3><i class="fas fa-database"></i> Databases</h3>
-                        <div class="skill-tags">
-                            <span class="tag">MongoDB</span>
-                            <span class="tag">PostgreSQL</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <h3><i class="fas fa-tools"></i> Tools and Platforms</h3>
-                        <div class="skill-tags">
-                            <span class="tag">Git</span>
-                            <span class="tag">GitHub</span>
-                            <span class="tag">VS Code</span>
-                            <span class="tag">Jupyter</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- ════════════════════════════════════
+       HEADER / NAV
+  ════════════════════════════════════ -->
+  <header id="header">
+    <nav aria-label="Main navigation">
+      <div class="nav-logo">SA</div>
 
-        <section class="projects" id="projects" aria-label="Projects">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Projects</h2>
-                    <h3>Selected Data Science and Analytics Work</h3>
-                </div>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3>Store-Item Demand Forecasting</h3>
-                            <p>Built for the TCS iON Data Science Challenge. Predicts daily sales for each store-item combination using historical records, baseline modeling, and export pipelines.</p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>Pandas</span>
-                                <span>NumPy</span>
-                                <span>Scikit-Learn</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Sumit-Agnihotri/Store_Item_Forecasting" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3>Diabetes Prediction App</h3>
-                            <p>Streamlit app that predicts diabetes risk from health parameters with a trained scikit-learn model using the Pima Indians dataset.</p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>Streamlit</span>
-                                <span>Scikit-Learn</span>
-                                <span>Pandas</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Sumit-Agnihotri/Diabetes_Prediction_App" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3>Google Play Store Data Analysis</h3>
-                            <p>Internship project analyzing reviews, ratings, and install trends with sentiment analysis and interactive Plotly visualizations.</p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>Pandas</span>
-                                <span>Plotly</span>
-                                <span>NumPy</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Sumit-Agnihotri/GOOGLE_PLAY_STORE_ANALYSIS" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3>India Job Market Analysis</h3>
-                            <p>Data-driven analysis of trends, role demand, and hiring insights across the Indian job market using real-world datasets.</p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>Pandas</span>
-                                <span>Matplotlib</span>
-                                <span>Seaborn</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Sumit-Agnihotri/INDIA_JOB_MARKET_PROJECT" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3>Sales Dashboard (Looker Studio)</h3>
-                            <p>Interactive dashboard for monitoring and analyzing sales performance with actionable visual insights.</p>
-                            <div class="project-tech">
-                                <span>Looker Studio</span>
-                                <span>Data Visualization</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://lookerstudio.google.com/u/0/reporting/c6baa854-1ad3-4b05-9830-53523ee28abe/page/qpnSF?s=g_Wisr_sEX0" target="_blank" rel="noopener noreferrer"><i class="fas fa-chart-bar"></i> View Dashboard</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <button class="hbg" id="hbg" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
 
-        <section class="journey" id="journey" aria-label="Journey">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Journey</h2>
-                    <h3>Learning Through Iteration</h3>
-                </div>
-                <div class="journey-content">
-                    <p>My path in data science started with one question: how can data help us make better decisions? The answer has come through continuous practice, experimentation, and reflection.</p>
-                    <p>Each project has helped me sharpen intuition, improve problem framing, and communicate results with clarity. I value consistency, curiosity, and high standards in execution.</p>
-                    <p>I am focused on developing production-ready AI skills and contributing to meaningful products where data and machine intelligence can drive measurable outcomes.</p>
-                </div>
-            </div>
-        </section>
+      <ul class="nav-links" id="nav-links" role="menubar">
+        <li role="none"><a href="#hero"       role="menuitem">Home</a></li>
+        <li role="none"><a href="#about"      role="menuitem">About</a></li>
+        <li role="none"><a href="#skills"     role="menuitem">Skills</a></li>
+        <li role="none"><a href="#experience" role="menuitem">Experience</a></li>
+        <li role="none"><a href="#projects"   role="menuitem">Projects</a></li>
+        <li role="none"><a href="#resume"     role="menuitem">Resume</a></li>
+        <li role="none"><a href="#contact"    role="menuitem">Contact</a></li>
+        <li role="none">
+          <a href="Sumit_Agnihotri_Resume.pdf" download class="nav-dl" role="menuitem">
+            <i class="fas fa-download" aria-hidden="true"></i> Resume
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-        <section class="education" id="education" aria-label="Education">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Education</h2>
-                    <h3>Academic Foundation</h3>
-                </div>
-                <div class="education-card">
-                    <h3>Amity University, Uttar Pradesh</h3>
-                    <h4>Bachelor of Computer Applications (Data Science)</h4>
-                    <p class="year">2023 - Present</p>
-                    <p>Focused on Data Science, Machine Learning, Artificial Intelligence, and practical implementation of intelligent systems.</p>
-                </div>
-            </div>
-        </section>
+  <!-- ════════════════════════════════════
+       MAIN
+  ════════════════════════════════════ -->
+  <main id="main" tabindex="-1">
 
-        <section class="certifications" id="certifications" aria-label="Certifications">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Certifications</h2>
-                    <h3>Verified Learning Milestones</h3>
-                </div>
-                <div class="certifications-list">
-                    <ul>
-                        <li><span class="cert-flag">IN</span> <strong>DSA 160 Challenge</strong> - GeeksforGeeks, 2025</li>
-                        <li><span class="cert-flag">IN</span> <strong>Data Science Internship</strong> - CodSoft, 2025</li>
-                        <li><span class="cert-flag">IN</span> <strong>Git and GitHub</strong> - DataCamp, 2025</li>
-                        <li><span class="cert-flag">IN</span> <strong>Python Intermediate</strong> - DataCamp, 2024</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <!-- ── HERO ── -->
+    <section class="hero" id="hero" aria-label="Introduction">
+      <div class="wrap hero-grid">
 
-        <section class="honor" id="honor" aria-label="Core Values">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Core Values</h2>
-                    <h3>Principles Behind My Work</h3>
-                </div>
-                <div class="honor-grid">
-                    <div class="honor-item">
-                        <h4>Continuous Learning</h4>
-                        <p>Improvement through disciplined iteration.</p>
-                    </div>
-                    <div class="honor-item">
-                        <h4>Adaptability</h4>
-                        <p>Responding quickly to new tools and constraints.</p>
-                    </div>
-                    <div class="honor-item">
-                        <h4>Collaboration</h4>
-                        <p>Building better outcomes through shared ownership.</p>
-                    </div>
-                    <div class="honor-item">
-                        <h4>Curiosity</h4>
-                        <p>Digging deeper to uncover meaningful signals.</p>
-                    </div>
-                    <div class="honor-item">
-                        <h4>Clarity</h4>
-                        <p>Turning complexity into understandable decisions.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact" id="contact" aria-label="Contact">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Contact</h2>
-                    <h3>Let Us Build Something Useful</h3>
-                </div>
-                <div class="contact-content">
-                    <div class="contact-methods">
-                        <div class="contact-card">
-                            <i class="fas fa-envelope"></i>
-                            <h3>Email</h3>
-                            <a href="mailto:sagnihotri9710@gmail.com">sagnihotri9710@gmail.com</a>
-                        </div>
-                        <div class="contact-card">
-                            <i class="fab fa-github"></i>
-                            <h3>GitHub</h3>
-                            <a href="https://github.com/Sumit-Agnihotri" target="_blank" rel="noopener noreferrer">@Sumit-Agnihotri</a>
-                        </div>
-                        <div class="contact-card">
-                            <i class="fab fa-linkedin"></i>
-                            <h3>LinkedIn</h3>
-                            <a href="https://linkedin.com/in/sumit-agnihotri" target="_blank" rel="noopener noreferrer">Sumit Agnihotri</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <p class="signature-quote">"For those who come after."</p>
-            <p>&copy; 2026 Sumit Agnihotri. All rights reserved.</p>
+        <!-- Left: Text -->
+        <div class="hero-text rv">
+          <div class="hero-badge">
+            <span class="pulse" aria-hidden="true"></span>
+            Open to Opportunities
+          </div>
+          <h1>Sumit<br /><span class="grad">Agnihotri</span></h1>
+          <p class="hero-role">Data Analyst &amp; AI Engineer in Progress</p>
+          <div class="typing-box" aria-live="polite" aria-label="Current focus">
+            <i class="fas fa-terminal" aria-hidden="true"></i>
+            <span id="typing-el"></span><span class="tcursor" aria-hidden="true"></span>
+          </div>
+          <div class="hero-rank">
+            <i class="fas fa-trophy" aria-hidden="true"></i>
+            Ranked <strong>#1</strong> in Programming &middot; Amity University Online &middot; GeeksforGeeks
+          </div>
+          <p class="hero-desc">
+            Aspiring Data Analyst with <strong>3+ years</strong> of practical experience in data analysis,
+            inventory management, and Python-based automation. Building reliable, high-impact AI solutions.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fas fa-rocket" aria-hidden="true"></i> View Projects
+            </a>
+            <a href="Sumit_Agnihotri_Resume.pdf" download class="btn btn-outline">
+              <i class="fas fa-file-download" aria-hidden="true"></i> Download Resume
+            </a>
+          </div>
         </div>
-    </footer>
 
-    <div id="navMap" class="nav-map-overlay" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="nav-map" role="document">
-            <div class="nav-map-header">
-                <h3>Navigation Map</h3>
-                <button class="nav-map-close" id="navMapClose" aria-label="Close navigation map">
-                    <i class="fas fa-times"></i>
-                </button>
+        <!-- Right: Visual -->
+        <div class="hero-visual rv" aria-hidden="true">
+          <div class="ring-wrap">
+            <div class="ring-inner">
+              <span class="initials">SA</span>
             </div>
-            <ul class="nav-map-list">
-                <li class="nav-node"><a href="#hero"><i class="fas fa-home"></i> Home</a></li>
-                <li class="nav-node"><a href="#about"><i class="fas fa-user"></i> About</a></li>
-                <li class="nav-node"><a href="#skills"><i class="fas fa-bolt"></i> Skills</a></li>
-                <li class="nav-node"><a href="#projects"><i class="fas fa-rocket"></i> Projects</a></li>
-                <li class="nav-node"><a href="#journey"><i class="fas fa-road"></i> Journey</a></li>
-                <li class="nav-node"><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
-                <li class="nav-node"><a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
-                <li class="nav-node"><a href="#honor"><i class="fas fa-compass"></i> Core Values</a></li>
-                <li class="nav-node"><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+          </div>
+          <div class="chips">
+            <div class="chip c1"><i class="fas fa-chart-line"></i> Data Analyst</div>
+            <div class="chip c2"><i class="fas fa-brain"></i> ML Engineer</div>
+            <div class="chip c3"><i class="fas fa-database"></i> SQL &amp; Python</div>
+            <div class="chip c4"><i class="fas fa-trophy"></i> GFG #1</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── STATS ── -->
+    <section class="stats-sec" id="stats" aria-label="Key statistics">
+      <div class="wrap">
+        <div class="stats-grid">
+          <div class="stat rv">
+            <div class="stat-num" data-target="1" data-prefix="#" data-suffix="">#?</div>
+            <div class="stat-lbl">GFG Programming Rank</div>
+          </div>
+          <div class="stat rv">
+            <div class="stat-num" data-target="3" data-suffix="+ Yrs">0</div>
+            <div class="stat-lbl">Practical Experience</div>
+          </div>
+          <div class="stat rv">
+            <div class="stat-num" data-target="4" data-suffix="">0</div>
+            <div class="stat-lbl">Projects Built</div>
+          </div>
+          <div class="stat rv">
+            <div class="stat-num" data-target="160" data-suffix="+">0</div>
+            <div class="stat-lbl">DSA Challenges Solved</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section id="about" aria-label="About me">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <div class="eyebrow"><i class="fas fa-user-circle" aria-hidden="true"></i> About Me</div>
+          <h2>Who I Am</h2>
+          <p>A data-driven builder with a bias for action and measurable outcomes.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card card rv">
+            <p>Hello — I'm <strong class="hl">Sumit Agnihotri</strong>, a Data Science student at Amity University Online
+              (BCA, Data Science Specialisation, CGPA <strong class="hl">8.1 / 10.0</strong>) and a working Data Analyst
+              based in Lucknow, India.</p>
+            <p>I've spent <strong class="hl">3+ years</strong> applying data analysis and Python automation in a real business context —
+              managing 200+ product SKUs, building BI dashboards, and automating weekly reporting pipelines that save
+              hours of manual work every week.</p>
+            <p>On the competitive side, I'm <strong class="hl">ranked #1 in Programming</strong> among all Amity University Online
+              learners on GeeksforGeeks, and I've completed 160+ DSA challenges. I'm focused on becoming a
+              production-ready ML engineer who ships things that matter.</p>
+          </div>
+
+          <div class="about-meta rv">
+            <div class="meta-item">
+              <div class="meta-icon violet"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+              <div>
+                <h4>Education</h4>
+                <p>BCA Data Science &middot; Amity University Online &middot; 2023–2026</p>
+              </div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-icon cyan"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+              <div>
+                <h4>Location</h4>
+                <p>Lucknow, Uttar Pradesh, India</p>
+              </div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-icon gold"><i class="fas fa-trophy" aria-hidden="true"></i></div>
+              <div>
+                <h4>Top Achievement</h4>
+                <p>#1 Programming &middot; Amity University Online &middot; GFG</p>
+              </div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-icon emerald"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
+              <div>
+                <h4>Current Role</h4>
+                <p>Data Analyst &amp; Stock Manager &middot; Sumit Homeopathic Store</p>
+              </div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-icon rose"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+              <div>
+                <h4>Email</h4>
+                <p>sagnihotri9710@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ── -->
+    <section id="skills" aria-label="Technical skills">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <div class="eyebrow"><i class="fas fa-bolt" aria-hidden="true"></i> Skills</div>
+          <h2>Technical <span class="grad">Capabilities</span></h2>
+          <p>Tools and technologies I use to turn raw data into real decisions.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="sk-card rv sk-violet">
+            <div class="sk-icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+            <h3>Programming</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+
+          <div class="sk-card rv sk-cyan">
+            <div class="sk-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
+            <h3>Machine Learning</h3>
+            <div class="tags">
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">Classification</span>
+              <span class="tag">Time-Series</span>
+              <span class="tag">Feature Engineering</span>
+              <span class="tag">Model Evaluation</span>
+            </div>
+          </div>
+
+          <div class="sk-card rv sk-emerald">
+            <div class="sk-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+            <h3>Data Analytics</h3>
+            <div class="tags">
+              <span class="tag">EDA</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">Statistical Analysis</span>
+              <span class="tag">Data Cleaning</span>
+            </div>
+          </div>
+
+          <div class="sk-card rv sk-gold">
+            <div class="sk-icon"><i class="fas fa-chart-bar" aria-hidden="true"></i></div>
+            <h3>Data Visualization</h3>
+            <div class="tags">
+              <span class="tag">Matplotlib</span>
+              <span class="tag">Seaborn</span>
+              <span class="tag">Looker Studio</span>
+              <span class="tag">BI Dashboards</span>
+              <span class="tag">Excel</span>
+            </div>
+          </div>
+
+          <div class="sk-card rv sk-rose">
+            <div class="sk-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
+            <h3>Databases</h3>
+            <div class="tags">
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">SQL Queries</span>
+              <span class="tag">DB Design</span>
+            </div>
+          </div>
+
+          <div class="sk-card rv sk-amber">
+            <div class="sk-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
+            <h3>Tools &amp; Platforms</h3>
+            <div class="tags">
+              <span class="tag">Git &amp; GitHub</span>
+              <span class="tag">Kaggle</span>
+              <span class="tag">Jupyter</span>
+              <span class="tag">Google Sheets</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXPERIENCE ── -->
+    <section id="experience" aria-label="Work experience">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <div class="eyebrow"><i class="fas fa-briefcase" aria-hidden="true"></i> Experience</div>
+          <h2>Work <span class="grad">Experience</span></h2>
+          <p>Real-world impact through data analysis and operations management.</p>
+        </div>
+
+        <div class="exp-grid">
+          <!-- Data Analyst -->
+          <article class="exp-card rv">
+            <div class="exp-header">
+              <div class="exp-title">
+                <h3>Data Analyst</h3>
+                <h4>Sumit Homeopathic Store &middot; Lucknow, Uttar Pradesh</h4>
+              </div>
+              <span class="exp-badge">Part-Time</span>
+            </div>
+            <p class="exp-period"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Jan 2022 – Present</p>
+            <ul class="exp-bullets">
+              <li>Analyzed monthly sales and inventory data for <span class="metric">200+ products</span>, identifying top-sellers and reducing slow-moving stock by <span class="metric">25%</span>.</li>
+              <li>Designed and maintained performance dashboards tracking revenue, stock turnover, and product demand — improving decision-making speed by <span class="metric">50%</span>.</li>
+              <li>Automated <span class="metric">3 recurring weekly reports</span> using Python and Google Sheets, saving <span class="metric">5+ hours</span> of manual work per week.</li>
+              <li>Applied data cleaning and statistical analysis to purchase records, improving procurement forecast accuracy by <span class="metric">30%</span>.</li>
+              <li>Delivered insights supporting a <span class="metric">20% reduction</span> in excess inventory costs through smarter buying decisions.</li>
             </ul>
+          </article>
+
+          <!-- Stock Manager -->
+          <article class="exp-card rv">
+            <div class="exp-header">
+              <div class="exp-title">
+                <h3>Stock Manager</h3>
+                <h4>Sumit Homeopathic Store &middot; Lucknow, Uttar Pradesh</h4>
+              </div>
+              <span class="exp-badge">Part-Time</span>
+            </div>
+            <p class="exp-period"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Jan 2022 – Present</p>
+            <ul class="exp-bullets">
+              <li>Managed inventory of <span class="metric">200+ SKUs</span>, maintaining stock accuracy above <span class="metric">98%</span> through regular audits and reconciliations.</li>
+              <li>Reduced stockout incidents by <span class="metric">35%</span> by establishing reorder points and coordinating timely replenishment.</li>
+              <li>Streamlined product categorization and storage, improving retrieval speed by <span class="metric">40%</span> and reducing operational errors.</li>
+              <li>Maintained accurate purchase and movement logs — <span class="metric">zero discrepancy</span> in monthly inventory reports.</li>
+              <li>Conducted weekly stock audits covering <span class="metric">100% of inventory</span>, resolving all discrepancies within 24 hours.</li>
+            </ul>
+          </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section id="projects" aria-label="Projects">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <div class="eyebrow"><i class="fas fa-rocket" aria-hidden="true"></i> Projects</div>
+          <h2>Selected <span class="grad">Work</span></h2>
+          <p>End-to-end data science projects with measurable real-world outcomes.</p>
+        </div>
+
+        <div class="proj-grid">
+          <!-- P1 -->
+          <article class="proj-card rv">
+            <div class="proj-top">
+              <div class="proj-num">01</div>
+              <h3>Electricity Consumption Forecasting</h3>
+            </div>
+            <div class="proj-body">
+              <p>Built a time-series forecasting model predicting electricity consumption. Performed end-to-end preprocessing, EDA, and feature engineering on 10,000+ records.</p>
+              <div class="proj-metrics">
+                <span class="proj-metric">22% MAE Reduction</span>
+                <span class="proj-metric">10K+ Records</span>
+                <span class="proj-metric">8 Visualizations</span>
+              </div>
+              <div class="proj-techs">
+                <span>Python</span><span>NumPy</span><span>Pandas</span>
+                <span>Matplotlib</span><span>Time-Series</span>
+              </div>
+              <a href="https://github.com/Sumit-Agnihotri" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- P2 -->
+          <article class="proj-card rv">
+            <div class="proj-top">
+              <div class="proj-num">02</div>
+              <h3>Diabetes Prediction Application</h3>
+            </div>
+            <div class="proj-body">
+              <p>Binary classification model predicting diabetes outcomes with 85%+ accuracy. Full ML pipeline from data cleaning to deployment with a real-time prediction interface.</p>
+              <div class="proj-metrics">
+                <span class="proj-metric">85%+ Accuracy</span>
+                <span class="proj-metric">60% Faster Diagnosis</span>
+              </div>
+              <div class="proj-techs">
+                <span>Python</span><span>Pandas</span><span>Scikit-learn</span>
+                <span>Classification</span>
+              </div>
+              <a href="https://github.com/Sumit-Agnihotri/Diabetes_Prediction_App" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- P3 -->
+          <article class="proj-card rv">
+            <div class="proj-top">
+              <div class="proj-num">03</div>
+              <h3>Wave Shoes Store Analytics Dashboard</h3>
+            </div>
+            <div class="proj-body">
+              <p>Interactive BI dashboard analyzing 12 months of retail sales data. Cleaned 5,000+ rows to 100% quality, built KPI trackers for revenue, units sold, and return rate.</p>
+              <div class="proj-metrics">
+                <span class="proj-metric">5K+ Rows Cleaned</span>
+                <span class="proj-metric">45% Less Reporting Time</span>
+                <span class="proj-metric">3 Revenue Drivers</span>
+              </div>
+              <div class="proj-techs">
+                <span>Looker Studio</span><span>Google Sheets</span>
+                <span>BI</span><span>Data Visualization</span>
+              </div>
+              <a href="https://lookerstudio.google.com/u/0/reporting/c6baa854-1ad3-4b05-9830-53523ee28abe/page/qpnSF" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <i class="fas fa-chart-bar" aria-hidden="true"></i> View Dashboard
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- P4 -->
+          <article class="proj-card rv">
+            <div class="proj-top">
+              <div class="proj-num">04</div>
+              <h3>AI City Traffic Control System</h3>
+            </div>
+            <div class="proj-body">
+              <p>AI-based Smart Traffic Intelligence System for real-time congestion analysis across 10 simulated city intersections using predictive analytics and computer vision techniques.</p>
+              <div class="proj-metrics">
+                <span class="proj-metric">30% Congestion Reduction</span>
+                <span class="proj-metric">10 Intersections</span>
+                <span class="proj-metric">15+ Visualizations</span>
+              </div>
+              <div class="proj-techs">
+                <span>Python</span><span>NumPy</span><span>Pandas</span>
+                <span>Matplotlib</span><span>Computer Vision</span><span>ML</span>
+              </div>
+              <a href="https://github.com/Sumit-Agnihotri" target="_blank" rel="noopener noreferrer" class="proj-link">
+                <i class="fab fa-github" aria-hidden="true"></i> View on GitHub
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RESUME ── -->
+    <section id="resume" aria-label="Resume">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <div class="eyebrow"><i class="fas fa-file-alt" aria-hidden="true"></i> Resume</div>
+          <h2>Full <span class="grad">Resume</span></h2>
+          <p>Education, certifications, and achievements — all in one place.</p>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="resume-toolbar rv">
+          <div class="tab-bar" role="tablist" aria-label="Resume sections">
+            <button class="tab-btn active" data-tab="education"    role="tab" aria-selected="true"  aria-controls="tab-education">Education</button>
+            <button class="tab-btn"         data-tab="skills-tab"  role="tab" aria-selected="false" aria-controls="tab-skills-tab">Skills</button>
+            <button class="tab-btn"         data-tab="certs"       role="tab" aria-selected="false" aria-controls="tab-certs">Certifications</button>
+            <button class="tab-btn"         data-tab="achievements"role="tab" aria-selected="false" aria-controls="tab-achievements">Achievements</button>
+          </div>
+          <a href="Sumit_Agnihotri_Resume.pdf" download class="btn btn-primary">
+            <i class="fas fa-download" aria-hidden="true"></i> Download PDF
+          </a>
+        </div>
+
+        <!-- Education -->
+        <div class="tab-pane active" id="tab-education" role="tabpanel">
+          <div class="tl">
+            <div class="tl-item rv">
+              <div class="tl-period">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i> Jul 2023 – Jul 2026
+                <span class="tbadge">Ongoing &middot; CGPA 8.1/10</span>
+              </div>
+              <h3>Bachelor of Computer Applications — Data Science Specialization</h3>
+              <h4>Amity University Online</h4>
+              <p>Specialised curriculum covering Machine Learning, Data Structures &amp; Algorithms, Database Management Systems,
+                Statistics, and Python Programming with a focus on practical AI implementation.</p>
+              <ul>
+                <li>Ranked <strong class="hl">#1 in Programming</strong> among all Amity University Online learners on GeeksforGeeks.</li>
+                <li>Completed 160+ DSA challenges during the programme.</li>
+                <li>Coursework: Machine Learning · DSA · DBMS · Statistics · Python Programming</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills Tab -->
+        <div class="tab-pane" id="tab-skills-tab" role="tabpanel">
+          <div class="rsk-grid">
+            <div class="rsk-group rv">
+              <h4><i class="fas fa-code" aria-hidden="true"></i> Programming</h4>
+              <ul class="rsk-list">
+                <li>Python (Primary)</li>
+                <li>SQL &amp; SQL Queries</li>
+              </ul>
+            </div>
+            <div class="rsk-group rv">
+              <h4><i class="fas fa-brain" aria-hidden="true"></i> Machine Learning</h4>
+              <ul class="rsk-list">
+                <li>Scikit-learn</li>
+                <li>Classification Models</li>
+                <li>Time-Series Forecasting</li>
+                <li>Model Evaluation</li>
+                <li>Feature Engineering</li>
+              </ul>
+            </div>
+            <div class="rsk-group rv">
+              <h4><i class="fas fa-chart-line" aria-hidden="true"></i> Data Analytics</h4>
+              <ul class="rsk-list">
+                <li>Exploratory Data Analysis</li>
+                <li>Statistical Analysis</li>
+                <li>Data Preprocessing &amp; Cleaning</li>
+                <li>Pandas &amp; NumPy</li>
+              </ul>
+            </div>
+            <div class="rsk-group rv">
+              <h4><i class="fas fa-chart-bar" aria-hidden="true"></i> Visualization</h4>
+              <ul class="rsk-list">
+                <li>Matplotlib &amp; Seaborn</li>
+                <li>Google Looker Studio</li>
+                <li>BI Dashboards</li>
+                <li>Microsoft Excel</li>
+              </ul>
+            </div>
+            <div class="rsk-group rv">
+              <h4><i class="fas fa-database" aria-hidden="true"></i> Databases</h4>
+              <ul class="rsk-list">
+                <li>PostgreSQL</li>
+                <li>Database Design</li>
+                <li>Google Sheets</li>
+              </ul>
+            </div>
+            <div class="rsk-group rv">
+              <h4><i class="fas fa-tools" aria-hidden="true"></i> Tools</h4>
+              <ul class="rsk-list">
+                <li>Git &amp; GitHub</li>
+                <li>Kaggle</li>
+                <li>Jupyter Notebook</li>
+                <li>Google Colab</li>
+              </ul>
+            </div>
+            <div class="rsk-group rv">
+              <h4><i class="fas fa-heart" aria-hidden="true"></i> Soft Skills</h4>
+              <ul class="rsk-list">
+                <li>Analytical Thinking</li>
+                <li>Inventory Management</li>
+                <li>Report Generation</li>
+                <li>Problem Solving</li>
+                <li>Communication</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="tab-pane" id="tab-certs" role="tabpanel">
+          <div class="cert-grid">
+            <div class="cert-card rv">
+              <div class="cert-icon"><i class="fas fa-code-branch" aria-hidden="true"></i></div>
+              <h4>GFG 160 DSA Challenge</h4>
+              <p class="cert-org">GeeksforGeeks &middot; Sep 2025</p>
+              <p>160+ DSA challenges demonstrating consistent problem-solving — contributed to ranking #1 at Amity University Online.</p>
+            </div>
+            <div class="cert-card rv">
+              <div class="cert-icon"><i class="fab fa-python" aria-hidden="true"></i></div>
+              <h4>Python Programming</h4>
+              <p class="cert-org">FrontEnd Masters &middot; Oct 2025</p>
+              <p>Advanced Python concepts including OOP, functional patterns, and real-world application development.</p>
+            </div>
+            <div class="cert-card rv">
+              <div class="cert-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
+              <h4>PostgreSQL Database Management</h4>
+              <p class="cert-org">CoursePe &middot; Oct 2025</p>
+              <p>Comprehensive PostgreSQL training covering database design, advanced queries, indexing, and performance optimisation.</p>
+            </div>
+            <div class="cert-card rv">
+              <div class="cert-icon"><i class="fab fa-git-alt" aria-hidden="true"></i></div>
+              <h4>Intermediate Git</h4>
+              <p class="cert-org">DataCamp &middot; Dec 2024</p>
+              <p>Version control mastery — branching, merging, rebasing, collaboration workflows, and open-source contribution practices.</p>
+            </div>
+          </div>
+          <div class="dl-area rv">
+            <p>Want the full resume with all details?</p>
+            <a href="Sumit_Agnihotri_Resume.pdf" download class="btn btn-primary">
+              <i class="fas fa-file-download" aria-hidden="true"></i> Download Full Resume PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="tab-pane" id="tab-achievements" role="tabpanel">
+          <div class="ach-grid">
+            <div class="ach-card rv">
+              <div class="ach-icon"><i class="fas fa-trophy" aria-hidden="true"></i></div>
+              <div>
+                <h4>🥇 Ranked #1 in Programming — Amity University Online</h4>
+                <p>Achieved the top programming rank among all Amity University Online learners on the GeeksforGeeks competitive programming platform.</p>
+              </div>
+            </div>
+            <div class="ach-card rv">
+              <div class="ach-icon"><i class="fas fa-fire" aria-hidden="true"></i></div>
+              <div>
+                <h4>160+ DSA Challenges Completed</h4>
+                <p>Completed the full GFG 160 DSA Challenge, solving 160+ algorithmic problems covering arrays, trees, graphs, dynamic programming, and more.</p>
+              </div>
+            </div>
+            <div class="ach-card rv">
+              <div class="ach-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+              <div>
+                <h4>3+ Years of Real-World Data Impact</h4>
+                <p>Delivered measurable business outcomes — 20% reduction in excess inventory costs, 50% faster decision-making, 5+ hours saved weekly through automation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="dl-area rv">
+            <p>See the complete picture — download the full resume PDF.</p>
+            <a href="Sumit_Agnihotri_Resume.pdf" download class="btn btn-primary">
+              <i class="fas fa-file-download" aria-hidden="true"></i> Download Full Resume PDF
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── VALUES ── -->
+    <section id="values" aria-label="Core values">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <div class="eyebrow"><i class="fas fa-compass" aria-hidden="true"></i> Core Values</div>
+          <h2>Principles Behind <span class="grad">My Work</span></h2>
+        </div>
+        <div class="val-grid">
+          <div class="val-card rv"><div class="val-em" aria-hidden="true">🎯</div><h4>Continuous Learning</h4><p>Disciplined daily improvement over bursts of effort.</p></div>
+          <div class="val-card rv"><div class="val-em" aria-hidden="true">⚡</div><h4>Adaptability</h4><p>Fast to respond to new tools, frameworks, and constraints.</p></div>
+          <div class="val-card rv"><div class="val-em" aria-hidden="true">🔍</div><h4>Curiosity</h4><p>Always digging deeper to find the meaningful signal.</p></div>
+          <div class="val-card rv"><div class="val-em" aria-hidden="true">💡</div><h4>Clarity</h4><p>Turning messy data into clear, actionable decisions.</p></div>
+          <div class="val-card rv"><div class="val-em" aria-hidden="true">🤝</div><h4>Collaboration</h4><p>Better outcomes through shared ownership and transparency.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact" aria-label="Contact">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <div class="eyebrow"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</div>
+          <h2>Let's Build Something <span class="grad">Meaningful</span></h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="rv">
+            <h3>Get In Touch</h3>
+            <p>Whether it's a job opportunity, freelance project, collaboration, or just a conversation about data — I'm always happy to connect.</p>
+            <div class="clinks">
+              <a href="mailto:sagnihotri9710@gmail.com" class="clink">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <div><h4>Email</h4><p>sagnihotri9710@gmail.com</p></div>
+              </a>
+              <a href="tel:+917388575006" class="clink">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <div><h4>Phone</h4><p>+91-7388575006</p></div>
+              </a>
+              <a href="https://github.com/Sumit-Agnihotri" target="_blank" rel="noopener noreferrer" class="clink">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                <div><h4>GitHub</h4><p>@Sumit-Agnihotri</p></div>
+              </a>
+              <a href="https://linkedin.com/in/sumit-agnihotri" target="_blank" rel="noopener noreferrer" class="clink">
+                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                <div><h4>LinkedIn</h4><p>Sumit Agnihotri</p></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form rv">
+            <h3>Send a Message</h3>
+            <p>I'll get back to you within 24 hours.</p>
+            <form id="contact-form" novalidate>
+              <div class="form-fields">
+                <div class="field">
+                  <label for="f-name" class="sr-only">Your Name</label>
+                  <input type="text" id="f-name" placeholder="Your Name" required autocomplete="name" />
+                </div>
+                <div class="field">
+                  <label for="f-email" class="sr-only">Your Email</label>
+                  <input type="email" id="f-email" placeholder="Your Email" required autocomplete="email" />
+                </div>
+                <div class="field">
+                  <label for="f-subject" class="sr-only">Subject</label>
+                  <input type="text" id="f-subject" placeholder="Subject" autocomplete="off" />
+                </div>
+                <div class="field">
+                  <label for="f-msg" class="sr-only">Your Message</label>
+                  <textarea id="f-msg" placeholder="Your Message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                  <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
+                </button>
+                <p id="form-success" role="status" aria-live="polite" style="display:none;">
+                  <i class="fas fa-check-circle" aria-hidden="true"></i> Message ready — your email client will open!
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════ -->
+  <footer>
+    <div class="wrap">
+      <p class="footer-quote">"For those who come after."</p>
+      <p class="footer-copy">&copy; 2026 Sumit Agnihotri &middot; Lucknow, India &middot; Built with purpose</p>
+      <div class="footer-links">
+        <a href="https://github.com/Sumit-Agnihotri" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="https://linkedin.com/in/sumit-agnihotri" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:sagnihotri9710@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+      </div>
     </div>
+  </footer>
 
-    <button id="navMapBtn" class="mobile-nav-map-btn" aria-haspopup="dialog" aria-controls="navMap" aria-expanded="false" aria-label="Open navigation map">
-        <i class="fas fa-project-diagram"></i>
-    </button>
+  <!-- ░░ SCROLL TO TOP ░░ -->
+  <button id="scroll-top" aria-label="Scroll to top of page" title="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
 
-    <button id="scrollTop" class="scroll-top" aria-label="Scroll to top" tabindex="0" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script src="main.js"></script>
+  <!-- Script -->
+  <script src="main.js"></script>
 </body>
 </html>
