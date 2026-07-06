@@ -382,7 +382,32 @@ function initContactForm() {
 }
 
 /* ──────────────────────────────────────
-   13. PARALLAX ORBS ON SCROLL
+   13. RESUME DOWNLOAD LINKS
+────────────────────────────────────── */
+function initResumeDownloads() {
+  qsa('a.resume-download').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      const filename = link.getAttribute('download') || href.split('/').pop() || 'resume.pdf';
+      const downloadLink = document.createElement('a');
+      downloadLink.href = href;
+      downloadLink.download = filename;
+      downloadLink.rel = 'noopener';
+      downloadLink.style.display = 'none';
+
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      downloadLink.remove();
+    });
+  });
+}
+
+/* ──────────────────────────────────────
+   14. PARALLAX ORBS ON SCROLL
 ────────────────────────────────────── */
 function initParallaxOrbs() {
   const o1 = qs('.o1');
@@ -413,6 +438,7 @@ window.addEventListener('load', () => {
   initTyping();
   initStats();
   initResumeTabs();
+  initResumeDownloads();
   initContactForm();
   initParallaxOrbs();
 });
